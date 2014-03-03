@@ -1,0 +1,371 @@
+@import 'elements.less';
+
+@rojo: #b52a31;
+@rojo2: #440f0f;
+@verde: #328c42;
+@verde2: #1e5327;
+@choco: chocolate_calienteregular, arial;
+@sombra: 1px 1px 3px black;
+
+
+/*--------------------------------------
+				generales
+--------------------------------------*/
+h1, h2, h3, h4{
+	font-family: @choco;
+}
+
+header{
+	position: fixed;
+	top: 30px;
+	top: 50px;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+}
+
+#menuBG {
+	height: 70px;
+	border-bottom: 10px solid @rojo;
+	background: @verde2;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.80);
+	color: white;
+	opacity: .9;
+}
+#logo {
+	margin-top: -30px;
+}
+#menu {
+	ul {
+		margin-top: 20px;
+		li {
+			margin-right: 15px;
+			a{
+				.transition(.2s, ease-out);
+				color: white;
+				text-decoration: none;
+				font-size: 22px;
+				&:hover{
+					padding-bottom: 2px;
+					border-bottom: 10px solid white;
+				}
+			}
+		}
+	}
+}
+
+.wallpapered70 { 
+	margin: 0; 
+	padding-top: 35%; 
+	width: 100%; 
+	background: #eee center top; 
+}
+.wallpapered { 
+	margin: 0; 
+	padding-top: 50%; 
+	width: 100%; 
+	background: #eee center top; 
+}
+
+.titulo {
+	color: @rojo;
+	text-shadow: 2px 2px 0px @rojo2;
+	font-size: 85px;
+}
+.tituloS {
+	color: @rojo;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+footer {
+	position: relative;
+	z-index: 99;
+	height: 80px;
+	background: @rojo;
+	img{
+		margin-top: -50px;
+	}
+}
+.btnRojo {
+	.rounded(5px);
+	.transition(.3s, ease-out);
+	margin-top: 15px;
+	padding: 10px 15px;
+	background: @rojo;
+	border: none;
+	color: white;
+	text-shadow: none;
+	span {
+		.rounded(20px);
+		margin-left: 5px;
+		padding: 1px 5px;
+		background: white;
+		color: @rojo;
+	}
+	&:hover{
+		background: darken(@rojo, 5%);
+		box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+		text-decoration: none;
+	}	
+}
+
+/*--------------------------------------
+				index
+--------------------------------------*/
+
+#redesIndex {
+	padding: 15px;
+	height: 90px;
+	background: url(../img/redesindex.jpg) center center @rojo;
+	color: white;
+	font-size: 16px;
+	line-height: 17px;
+	h2{
+		margin-top: -00px;
+		text-align: center;
+		font-size: 28px;
+	}
+}
+
+#hotspot-6 {
+	background: #c99629;
+}
+.upper {
+	position: absolute !important;
+	top: 10%;
+	left: 5%;
+	z-index: 1;
+}
+#upper2 {
+	position: absolute;
+	z-index: 99999999;
+	margin-top: 300px;
+	width: 400px;
+	right: 5%;
+
+}
+#text-Ens {
+	width: 400px;
+	margin-top: -600px;
+	margin-bottom: 300px;
+	z-index: 999;
+	position: relative;
+	float: right;
+	text-align: right;
+	right: 3%;
+	color: white;
+	text-shadow: @sombra;
+	font-size: 18px;
+}
+#mapaCont {
+	color: white;
+	font-size: 18px;
+	p {
+		text-shadow: @sombra;
+	}
+}
+
+#contIndex {
+	color: white;
+	text-shadow: 1px 1px 3px black;
+	h3{
+		color: white;
+	}
+	#notipizza {
+		margin-top: 30px;
+	}
+	ul{
+		li{
+			a{
+				color: white;
+				.transition(.2s, ease-out);
+				&:hover {
+					color: @rojo;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+
+#quotes {
+	background: #1a4521 url(../img/notebook.jpg) repeat;
+	
+}
+
+blockquote p { 
+	margin-bottom: 10px;
+	font-style: italic;
+	color: white;
+	font-size: 24px; 
+}
+blockquote cite { 
+	font-style: normal; 
+	display: block; 
+	text-align: right; 
+	text-transform: uppercase; 
+	font-size: 10px; 
+	font-weight: bold; 
+	letter-spacing: 1px;
+	color: white; 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+blockquote {
+	font-family: Georgia, Times, serif;
+	width: 100%; /* required */
+	margin: 0 auto;
+	}
+
+#quote_wrap { 
+	background: url(../img/quote1.png) no-repeat;
+	margin: 20px 0 80px 0; padding: 20px; 
+	}
+
+
+
+/*--------------------------------------
+				top 10
+--------------------------------------*/
+#hotspot-27 {
+	width: 1200px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 10px black;
+}
+#pizzasIntro {
+	position: relative !important;
+	z-index: 1;
+	width: 1200px;
+	margin: 0 auto;
+	color: white;
+	text-align: right;
+	margin-top: 170px;
+	margin-bottom: -370px;
+	margin-left: 40px;
+	h1{
+		font-size: 140px;
+		margin-bottom: -10px;
+	}
+	h3{
+		margin: 0 0 -50px 0;
+		text-shadow: 2px 2px 0px @rojo2;
+		font-size: 40px;
+	}
+	p{
+		width: 430px;
+		float: right;
+		font-size: 18px;
+		text-align: right;
+		text-shadow: @sombra;
+	}
+	img{
+		margin-top: -30px;
+		margin-right: 20px;
+	}
+}
+#pizzas{
+	margin-top: -400px;
+	margin-bottom: 130px;
+}
+.nomPizzas{
+	font-size: 30px;
+	font-family: @choco;
+	li {
+		color: white;
+		text-shadow: @sombra;
+		margin: 5px 0;
+		list-style: none;
+		span{
+			background: @verde;
+			padding: 2px 10px 0px 10px;
+			.rounded(20px);
+			color: white;
+			margin-right: 15px;
+			text-shadow: none;
+			font-size: 20px;
+		}
+	}
+}
+
+.prods {
+	margin: 15px 0;
+	text-align: center;
+}
+
+#redesTop {
+	padding: 15px;
+	height: 90px;
+	background: url(../img/redesindex.jpg) center center @rojo;
+	color: white;
+	font-size: 16px;
+	line-height: 17px;
+	z-index: 1;
+	position: relative;
+	h2{
+		margin-top: -00px;
+		text-align: center;
+		font-size: 28px;
+	}
+}
+
+
+
+/*--------------------------------------
+				contacto
+--------------------------------------*/
+
+#contBG {
+	background: url(../img/contactoBG.jpg) repeat center top;	
+}
+#formulario {
+	background:rgba(255,255,255,0.9);
+	.rounded(10px);
+	margin-top: 190px;
+	margin-bottom: 50px;
+	box-shadow: 0px 0px 6px black;
+	padding-bottom: 20px;
+}
+#verduras {
+	float: left;
+	position: absolute;
+	z-index: 99;
+	left: 3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Small devices (480px and down) */
+@media (max-width: 480px) { 
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	
+}
+
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	
+}
+
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) { 
+	
+}
