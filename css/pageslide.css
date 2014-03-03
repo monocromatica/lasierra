@@ -8,9 +8,10 @@
     z-index: 999999;
     
     /* Specify the width of your pageslide here */
-    width: 80%;
+    width: 650px;
+    vertical-align: middle;
     padding: 20px;
-    
+    background: url(../img/prodBG.jpg) repeat;
     /* These styles are optional, and describe how the pageslide will look */
     background-color: #333;
     color: #FFF;

@@ -58,8 +58,8 @@
 						<nav id="menu" class="col-md-9 text-right">
 							<ul class="list-inline">
 								<li><a href="index.html">Inicio</a></li>
-								<li><a href="">Men&uacute; Top 10</a></li>
-								<li><a href="">Sucursales</a></li>
+								<li class='current'><a class='current' href="top10.html">Men&uacute; Top 10</a></li>
+								<li><a href="sucursales.html">Sucursales</a></li>
 								<li><a href="">La Sierra Kids</a></li>
 								<li><a href="contacto.html">Contacto</a></li>
 							</ul>
@@ -190,15 +190,18 @@
 			</div><!-- /.container -->
 		</div><!-- /#redesIndex -->
     	
-    	<div id="menuTop10">
+    	<div id="menuTop10" class=" complementos">
     		<div class="container">
     			<div class="row">
-    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })">&aacute;brete sesamo</a></div>
-    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })">&aacute;brete sesamo</a></div>
-    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })">&aacute;brete sesamo</a></div>
-    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })">&aacute;brete sesamo</a></div>
-    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })">&aacute;brete sesamo</a></div>
-    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })">&aacute;brete sesamo</a></div>
+    				<div class="col-md-12">
+    					<h1 class="titulo">A&ntilde;&aacute;dele a tu men&uacute;! <img src="img/selecc03.png" alt="" class="pull-right" /></h1>
+    				</div>
+    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })"><img src="img/ensaladas.jpg" alt="" class="scale" /></a></div>
+    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })"><img src="img/pastas.jpg" alt="" class="scale" /></a></div>
+    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })"><img src="img/complementos.jpg" alt="" class="scale" /></a></div>
+    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })"><img src="img/postres.jpg" alt="" class="scale" /></a></div>
+    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'secondary.html' })"><img src="img/kidsmeal.jpg" alt="" class="scale" /></a></div>
+    				<div class="col-md-4 prods"><a href="javascript:$.pageslide({ direction: 'left', href: 'bebidas.html' })"><img src="img/bebidas.jpg" alt="" class="scale" /></a></div>
     			</div>
     		</div>
     	</div>
@@ -222,6 +225,7 @@
 <script src='js/main.js'></script>
 <script src='js/hotspot.js'></script>
 <script src='js/pageslide.js'></script>
+<script src='js/midway.min.js'></script>
 		<script type="text/javascript">
 		    $(document).ready(function(){
 		    	$("#hotspot-27").hotspot({ "show_on" : "mouseover" });
