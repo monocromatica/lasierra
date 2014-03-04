@@ -112,20 +112,6 @@ footer {
 	}	
 }
 
-
-
-.scale {
-	.transition(.2s, ease-out);
-	box-shadow: 0px 0px 10px black;
-	border: 1px solid white;
-	&:hover {
-		.scale(1.02);
-	}	
-}
-
-
-
-
 /*--------------------------------------
 				index
 --------------------------------------*/
@@ -326,13 +312,6 @@ blockquote {
 	}
 }
 
-#menuTop10 {
-	background: url(../img/ingBG.jpg) no-repeat center top;
-	background-attachment: fixed;
-}
-.complementos {
-	padding: 50px 0;
-}
 
 
 /*--------------------------------------
@@ -364,20 +343,54 @@ blockquote {
 /*---------------------------------------
               sucursales
 ---------------------------------------*/
-.bgImg{
+/*-------------------------------------
+				Sucursal
+-------------------------------------*/
+.BGSuc{
 	background: url(../img/sucBG.jpg);
-	
+	background-size: 110%;
 }
 
-.texto{
+.contenedor{
+	padding-top: 200px;
+}
+
+.titulo_suc{
+	font-size: .8em;
+	line-height: 50px;
+	margin: 40% 0 0 25%;
+}
+
+.texto_suc{
+	text-align: center;
+	margin:10% 0 0 2%;
+	color: #595959;
+	font-size: medium;
+	font-family: sans-serif; 
+}
+
+.estados{
 	color:@verde;
+	font-size:xx-large;
+	font-family: @choco;
+	line-height: 40px;
+	margin: 30% 0 0 1%;
 }
 
-#Sucursales{
-	font-size: 3em;
+.img_suc{
+	margin: 3% -8% 0 0;
 }
-	
 
+.mapa{
+	background: #ffffff;
+}
+
+#map-canvas{
+	width: 50%;
+ 	height: 800px;
+ 	margin: 10% 2% 3% 10%;
+ 	float: right;
+}
 /* Small devices (480px and down) */
 @media (max-width: 480px) { 
 
