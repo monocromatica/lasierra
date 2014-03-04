@@ -370,6 +370,9 @@ blockquote {
 .texto {
   color: #328c42;
 }
+#Sucursales {
+  font-size: 3em;
+}
 /* Small devices (480px and down) */
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
