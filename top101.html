@@ -10,35 +10,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel='stylesheet' href='css/bootstrap.css'>
-<link rel='stylesheet' href='css/app.css'>
-<link rel='stylesheet' href='fonts/chocolate.css'>
-<link rel='stylesheet' href='css/hotspot.css'>
-<link rel='stylesheet' href='css/pageslide.css'>
+        <!-- @stylesheet bootstrap app chocolate hotspot pageslide -->
 		
-		
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
+		<!-- @reload -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 		<script type="text/javascript" src="js/midway.min.js"></script>
@@ -50,26 +24,7 @@
         <![endif]-->
 
 		
-				<header>
-			<div id="menuBG">
-				<div class="container">
-					<div class="row">
-						<div id="logo" class="col-md-3">
-							<a href="index.html"><img src="img/logo.png" alt="Pizzería La Sierra" /></a>
-						</div>
-						<nav id="menu" class="col-md-9 text-right">
-							<ul class="list-inline">
-								<li><a href="index.html">Inicio</a></li>
-								<li class='current'><a class='current' href="top10.html">Men&uacute; Top 10</a></li>
-								<li><a href="sucursal.html">Sucursales</a></li>
-								<li><a href="">La Sierra Kids</a></li>
-								<li><a href="contacto.html">Contacto</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</header>
+		<!-- @include _header.html -->
 			<div id="pizzasIntro">
 				<h3 class="tituloS">Conoce nuestras</h3>
 				<h1 class="titulo">Pizzas!</h1>
@@ -77,49 +32,44 @@
 				<img src="img/selecc01.png" alt="selecc01" width="302" height="95">
 			</div>
 			
-		<div id="hotspot-32" class="hs-wrap hs-loading pull-left">
-			<img src="img/pIzq.png">
-			<div class="hs-spot-object" data-type="spot" data-x="118" data-y="177" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+		<div id="hotspot-27" class="hs-wrap hs-loading">
+			
+			<img src="img/pizzas.jpg">
+			<div class="hs-spot-object" data-type="spot" data-x="126" data-y="263" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
 			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
 			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="355" data-y="381" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<div class="hs-spot-object" data-type="spot" data-x="334" data-y="410" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
 			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
 			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="447" data-y="630" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<div class="hs-spot-object" data-type="spot" data-x="452" data-y="703" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
 			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
 			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="341" data-y="890" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<div class="hs-spot-object" data-type="spot" data-x="343" data-y="1020" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
 			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
 			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="106" data-y="1070" data-width="30" data-height="30" data-popup-position="top" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<div class="hs-spot-object" data-type="spot" data-x="100" data-y="1200" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
+			</div>
+			<div class="hs-spot-object" data-type="spot" data-x="1116" data-y="700" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
+			</div>
+			<div class="hs-spot-object" data-type="spot" data-x="860" data-y="860" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
+			</div>
+			<div class="hs-spot-object" data-type="spot" data-x="750" data-y="1100" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
+			</div>
+			<div class="hs-spot-object" data-type="spot" data-x="838" data-y="1390" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
+			</div>
+			<div class="hs-spot-object" data-type="spot" data-x="1050" data-y="1586" data-width="30" data-height="30" data-popup-position="top" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
 			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
 			</div>
 		</div>
-		
-		<div id="hotspot-58" class="hs-wrap hs-loading pull-right">
-			<img src="img/pDer.png">
-			<div class="hs-spot-object" data-type="spot" data-x="501" data-y="120" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
-				<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
-			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="252" data-y="258" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
-				<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
-			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="137" data-y="548" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
-				<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
-			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="243" data-y="828" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
-				<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
-			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="480" data-y="1004" data-width="30" data-height="30" data-popup-position="top" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
-				<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
-			</div>
-		</div>
-
 		<div id="pizzas" class="container">
 			<div class="row">
 				<div class="col-md-7">
 					<div class="row">
-						<h1 class="titulo">Top 10 en Pizzas</h1>
 						<div class="col-md-6">
 							<ul class="nomPizzas">
 								<li>
@@ -245,23 +195,12 @@
     		</div>
     	</div>
     	
-		    	<footer>
-	    	<div class="container">
-	    		<div class="row">
-	    			<div class="col-md-12 text-center"><img src="img/logo-footer.png" alt="Pizzería La Sierra" /></div>
-	    		</div>
-	    	</div>
-    	</footer>
+		<!-- @include _footer.html -->
     	
-    	
-		<script src='js/vendor/bootstrap.min.js'></script>
-<script src='js/main.js'></script>
-<script src='js/hotspot.js'></script>
-<script src='js/pageslide.js'></script>
+		<!-- @javascript bootstrap.min main hotspot pageslide -->
 		<script type="text/javascript">
 		    $(document).ready(function(){
-		    	$("#hotspot-32").hotspot({ "show_on" : "mouseover" });
-		    	$("#hotspot-58").hotspot({ "show_on" : "mouseover" });
+		    	$("#hotspot-27").hotspot({ "show_on" : "mouseover" });
 		    });
 		</script>
 		<script>
@@ -269,11 +208,6 @@
 				$(".second").pageslide({ direction: "left", modal: true });
 			});
 		</script>
-		        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+		<!-- @include _analytics.html -->
     </body>
 </html>

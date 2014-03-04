@@ -212,21 +212,21 @@ blockquote {
 /*--------------------------------------
 				top 10
 --------------------------------------*/
+#topBG {
+  background: url(../img/topBG.jpg) repeat;
+}
 #hotspot-27 {
   width: 1200px;
-  margin: 0 auto;
-  box-shadow: 0px 0px 10px black;
+  margin: -30px auto 0 auto;
 }
 #pizzasIntro {
   position: relative !important;
   z-index: 1;
+  right: 40px;
   width: 1200px;
-  margin: 0 auto;
+  margin: 140px auto -370px auto;
   color: white;
   text-align: right;
-  margin-top: 170px;
-  margin-bottom: -370px;
-  margin-left: 40px;
 }
 #pizzasIntro h1 {
   font-size: 140px;
@@ -247,6 +247,17 @@ blockquote {
 #pizzasIntro img {
   margin-top: -30px;
   margin-right: 20px;
+}
+#hotspot-32 {
+  margin-top: -200px;
+  position: relative;
+  z-index: 9;
+}
+#hotspot-58 {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  margin-top: 400px;
 }
 #pizzas {
   margin-top: -400px;
@@ -291,6 +302,36 @@ blockquote {
   margin-top: 0px;
   text-align: center;
   font-size: 28px;
+}
+#menuTop10 {
+  background: url(../img/ingBG.jpg) no-repeat center top;
+  background-attachment: fixed;
+}
+.complementos {
+  padding: 50px 0;
+}
+.cerrar {
+  font-family: chocolate_calienteregular, arial;
+  font-size: 18px;
+  background: #b52a31;
+  color: white;
+  padding: 5px 10px 0 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  box-shadow: 0px 0px 6px black;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.cerrar:hover {
+  color: white;
+  background: darkent(#b52a31, 5%);
+  text-decoration: none;
 }
 /*--------------------------------------
 				contacto
