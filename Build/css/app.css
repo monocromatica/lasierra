@@ -227,10 +227,12 @@ blockquote {
 /*--------------------------------------
 				top 10
 --------------------------------------*/
+#topBG {
+  background: url(../img/contactoBG.jpg) repeat center top;
+}
 #hotspot-27 {
   width: 1200px;
-  margin: 0 auto;
-  box-shadow: 0px 0px 10px black;
+  margin: -30px auto 0 auto;
 }
 #pizzasIntro {
   position: relative !important;
@@ -239,7 +241,7 @@ blockquote {
   margin: 0 auto;
   color: white;
   text-align: right;
-  margin-top: 170px;
+  margin-top: 140px;
   margin-bottom: -370px;
   margin-left: 40px;
 }
@@ -314,6 +316,29 @@ blockquote {
 .complementos {
   padding: 50px 0;
 }
+.cerrar {
+  font-family: chocolate_calienteregular, arial;
+  font-size: 18px;
+  background: #b52a31;
+  color: white;
+  padding: 5px 10px 0 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  box-shadow: 0px 0px 6px black;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.cerrar:hover {
+  color: white;
+  background: darkent(#b52a31, 5%);
+  text-decoration: none;
+}
 /*--------------------------------------
 				contacto
 --------------------------------------*/
@@ -335,6 +360,15 @@ blockquote {
   position: absolute;
   z-index: 99;
   left: 3%;
+}
+/*---------------------------------------
+              sucursales
+---------------------------------------*/
+.bgImg {
+  background: url(../img/sucBG.jpg);
+}
+.texto {
+  color: #328c42;
 }
 /* Small devices (480px and down) */
 /* Small devices (tablets, 768px and up) */
