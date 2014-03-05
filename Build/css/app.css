@@ -66,6 +66,12 @@ header {
   width: 100%;
   background: #eee center top;
 }
+.wallpaperedFran {
+  margin: 0;
+  padding-top: 400px;
+  width: 100%;
+  background: #eee center top;
+}
 .titulo {
   color: #b52a31;
   text-shadow: 2px 2px 0px #440f0f;
@@ -389,6 +395,9 @@ blockquote {
 #imgNos {
   margin-top: -100px;
 }
+/*---------------------------------------
+              franquicias
+---------------------------------------*/
 /*---------------------------------------
               sucursales
 ---------------------------------------*/
