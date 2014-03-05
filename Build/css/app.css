@@ -362,8 +362,8 @@ blockquote {
 				Sucursal
 -------------------------------------*/
 .BGSuc {
-  background: url(../img/sucBG.jpg);
-  background-size: 110%;
+  background: url(../img/sucBG.jpg) center top;
+  /*background-size: 110%;*/
 }
 .contenedor {
   padding-top: 200px;
@@ -394,12 +394,67 @@ blockquote {
   background: #ffffff;
 }
 #map-canvas {
-  width: 50%;
-  height: 800px;
-  margin: 10% 2% 3% 10%;
+  height: 500px;
+  margin: 10% 0 3% 0;
+}
+.info_suc {
+  width: 30%;
+  height: 500px;
+  z-index: 98;
+  background-color: #ffffff;
+  position: absolute;
+  margin-left: 67.5%;
   float: right;
 }
-/* Small devices (480px and down) */
+/* Small devices (480px and down) class="info_suc" */
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
+/*
+   /*var map;
+		  	var mislocales = new Array();
+			mislocales[0] = 20.730780, -103.346258;
+			mislocales[1] = -0.406491, -69.609375;
+			mislocales[2] = 0.701391, -65.489502;
+			mislocales[3] = 21.163282, -98.701172;
+			mislocales[4] = 31.266813, -97.382813;
+			mislocales[5] = 38.664067, -117.070313;
+			mislocales[6] = 40.157885, -95.800781;
+			mislocales[7] = 34.261757, 89.648438;
+			mislocales[8] = 53.298056, 46.054688;
+			mislocales[9] = 55.347889, 95.625000;
+			mislocales[10] = 67.464398, -39.199219;
+		
+	  	function initialize() {
+        	var mapOptions = {
+			center: new google.maps.LatLng(28.647114, -106.053898),//20.730780, -103.346258
+			zoom: 14
+			
+			};
+	        var map = new google.maps.Map(document.getElementById("map-canvas"),
+	            mapOptions);
+	       // var deliciasloC= new.google.maps.LatLng(20.730780, -103.346258);
+	        var Delicias= new google.maps.Marker({
+				position: (20.730780, -103.346258),
+			    map: map,
+			    title:"Hola Mundo"
+			});
+	            if(navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(function(position) {
+						var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+						var infowindow = new google.maps.InfoWindow({
+							map: map,
+							position: pos,
+							content: 'Esta es tu ubicación actual.'
+						});
+	
+						map.setCenter(pos);
+						}, function() {
+							handleNoGeolocation(true);
+							});
+				} else {
+	    // Browser doesn't support Geolocation
+	    			handleNoGeolocation(false);
+						}	            
+		}
+      google.maps.event.addDomListener(window, 'load', initialize);	*/
