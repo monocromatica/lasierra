@@ -1,6 +1,9 @@
 /*--------------------------------------
 				generales
 --------------------------------------*/
+body {
+  overflow-x: hidden;
+}
 h1,
 h2,
 h3,
@@ -54,6 +57,18 @@ header {
 .wallpapered {
   margin: 0;
   padding-top: 50%;
+  width: 100%;
+  background: #eee center top;
+}
+.wallpaperedNos {
+  margin: 0;
+  padding-top: 370px;
+  width: 100%;
+  background: #eee center top;
+}
+.wallpaperedFran {
+  margin: 0;
+  padding-top: 400px;
   width: 100%;
   background: #eee center top;
 }
@@ -355,6 +370,34 @@ blockquote {
   z-index: 99;
   left: 3%;
 }
+/*---------------------------------------
+              nosotros
+---------------------------------------*/
+#nosBG {
+  background: url(../img/contactoBG.jpg) repeat center top;
+}
+#nosHeader {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+#nosInfo {
+  background: white;
+  margin-top: -50px;
+  margin-bottom: 80px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: justify;
+  padding-bottom: 40px;
+  box-shadow: 0px 0px 10px black;
+  position: relative;
+  z-index: 9;
+}
+#imgNos {
+  margin-top: -100px;
+}
+/*---------------------------------------
+              franquicias
+---------------------------------------*/
 /*---------------------------------------
               sucursales
 ---------------------------------------*/
