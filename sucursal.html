@@ -92,26 +92,164 @@
 			map: map,
 			icon: icon_pizzas
 		});
+				//var datosSucs=[]
 		
-		var todasSucs=[];
-		var victoria=$('.datosSucs .Vic');
-		$(todasSucs).hide();
-		var infosuc=$('.info_suc');
 		
+
 		google.maps.event.addListener(victoriaMarker, 'click', procesaClick);
 		function procesaClick() {
-			$(infosuc).show("fast");
-			
-
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Vic').removeClass("display");
+			$('#Sen').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+		}
+		google.maps.event.addListener(senderoMarker, 'click', procesaClick2);
+		function procesaClick2() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Sen').removeClass("display");
 			
 		}
-		
-		google.maps.event.addListener(sendero)
-		
-		
+		google.maps.event.addListener(sanangelMarker, 'click', procesaClick3);
+		function procesaClick3() {
+			$('#Vic').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#San').removeClass("display");
+		}
+		google.maps.event.addListener(saltilloMarker, 'click', procesaClick4);
+		function procesaClick4() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Sal').removeClass("display");
+		}
+		google.maps.event.addListener(ncgMarker, 'click', procesaClick5);
+		function procesaClick5() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Ncg').removeClass("display");
+		}
+		google.maps.event.addListener(torresMarker, 'click', procesaClick6);
+		function procesaClick6() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Las').removeClass("display");
+		}
+		google.maps.event.addListener(florenciaMarker, 'click', procesaClick7);
+		function procesaClick7() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Flo').removeClass("display");
+		}
+		google.maps.event.addListener(elvalleMarker, 'click', procesaClick8);
+		function procesaClick8() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");		
+			$('.info_suc').show("fast");
+			$('#Elv').removeClass("display");
+		}
+		google.maps.event.addListener(durangoMarker, 'click', procesaClick9);
+		function procesaClick9() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Dur').removeClass("display");
+		}
+		google.maps.event.addListener(deliciasMarker, 'click', procesaClick10);
+		function procesaClick10() {
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+			$('#Del').removeClass("display");
+		}
 			
 // Añadir el marcador al mapa con una llamada a setMap();
-marker.setMap(map);
+		Marker.setMap(map);
       }
       	    </script>
 		<!-- @javascript bootstrap.min main jquery.nivo.slider.pack hotspot fs.wallpaper jquery.quovolver -->
@@ -140,11 +278,17 @@ marker.setMap(map);
 		      <div class="col-md-3 img_suc"><img src="img/sucImg.png" alt="Imágen_Sucursal" /></div>
 		    </div>
 			<div class="container mapa">
+			<ul class="nav nav-tabs">
+					  <li class="active"><a href="#">Chihuahua</a></li>
+					  <li><a href="#">Sonora</a></li>
+					  <li><a href="#">Guanajuato</a></li>
+					  <li><a href="#">Coahuila</a></li>
+					</ul>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="info_suc">
 							<div class="todasSucs">
-								<div class="datosSucs" id="Vic">
+								<div id="Vic" class="display">
 									<h2>Sucursal Victoria</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-victoria.jpg" />
 									<h4>Dirección</h4>
@@ -157,7 +301,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzasvictoria@lasierra.com.mx</p>
 			 					</div>
-								<div class="datosSucs" id=" Sen">
+								<div id="Sen" class="display">
 									<h2>Sucursal Sendero</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sendero.jpg" />
 									<h4>Dirección</h4>
@@ -170,7 +314,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzassendero@lasierra.com.mx</p>
 	</div>
-								<div class="datosSucs" id=" San">
+								<div id="San" class="display">
 									<h2>Sucursal San Ángel</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sanAngel.jpg" />
 									<h4>Dirección</h4>
@@ -183,7 +327,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzassanAngel@lasierra.com.mx</p>
 	</div>
-								<div class="datosSucs" id=" Sal">
+								<div id="Sal" class="display">
 									<h2>Sucursal Saltillo</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
@@ -196,7 +340,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzassaltillo@lasierra.com.mx</p>
 	</div>
-								<div class="datosSucs" id=" Ncg">
+								<div id="Ncg" class="display">
 									<h2>Sucursal NCG</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-ncg.jpg" />
 									<h4>Dirección</h4>
@@ -209,7 +353,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzasncg@lasierra.com.mx</p>
 	</div>
-								<div class="datosSucs" id=" Las">
+								<div id="Las" class="display">
 									<h2>Sucursal Las Torres</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-lasTorres.jpg" />
 									<h4>Dirección</h4>
@@ -222,7 +366,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzasLastorres@lasierra.com.mx</p>
 	</div>
-								<div class="datosSucs" id=" Flo">
+								<div id="Flo" class="display">
 									<h2>Sucursal Florencia</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-florencia.jpg" />
 									<h4>Dirección</h4>
@@ -235,7 +379,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzasflorencia@lasierra.com.mx</p>
 	</div>
-								<div class="datosSucs" id=" Elv">
+								<div id="Elv" class="display">
 									<h2>Sucursal El Valle</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-elValle.jpg" />
 									<h4>Dirección</h4>
@@ -248,7 +392,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzasdelicias@lasierra.com.mx</p>
 								</div>
-								<div class="datosSucs" id=" Dur">
+								<div id="Dur" class="display">
 									<h2>Sucursal Durango</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-durango.jpg" />
 									<h4>Dirección</h4>
@@ -261,7 +405,7 @@ marker.setMap(map);
 									<h4>E-mail</h4> 
 									<p>pizzasdurango@lasierra.com.mx</p>
 	</div>
-								<div class="datosSucs" id=" Del">
+								<div id="Del" class="display">
 									<h2>Sucursal Delicias</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-delicias.jpg" />
 									<h4>Dirección</h4>
