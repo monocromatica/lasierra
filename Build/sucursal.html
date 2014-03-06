@@ -121,11 +121,20 @@
 			icon: icon_pizzas
 		});
 		
+		var todasSucs=[];
+		var victoria=$('.datosSucs .Vic');
+		$(todasSucs).hide();
+		var infosuc=$('.info_suc');
+		
 		google.maps.event.addListener(victoriaMarker, 'click', procesaClick);
 		function procesaClick() {
-			$('.info_suc').show("fast");
+			$(infosuc).show("fast");
+			
+
 			
 		}
+		
+		google.maps.event.addListener(sendero)
 		
 		
 			
@@ -185,7 +194,142 @@ marker.setMap(map);
 			<div class="container mapa">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="info_suc">Hola holaHola holaHola holaHola holaHola holaHola holaHola holaHola hola</div>
+						<div class="info_suc">
+							<div class="todasSucs">
+								<div class="datosSucs" id="Vic">
+									<h2>Sucursal Victoria</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-victoria.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasvictoria@lasierra.com.mx</p>
+			 					</div>
+								<div class="datosSucs" id=" Sen">
+									<h2>Sucursal Sendero</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sendero.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassendero@lasierra.com.mx</p>
+	</div>
+								<div class="datosSucs" id=" San">
+									<h2>Sucursal San Ángel</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sanAngel.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassanAngel@lasierra.com.mx</p>
+	</div>
+								<div class="datosSucs" id=" Sal">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div class="datosSucs" id=" Ncg">
+									<h2>Sucursal NCG</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-ncg.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasncg@lasierra.com.mx</p>
+	</div>
+								<div class="datosSucs" id=" Las">
+									<h2>Sucursal Las Torres</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-lasTorres.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasLastorres@lasierra.com.mx</p>
+	</div>
+								<div class="datosSucs" id=" Flo">
+									<h2>Sucursal Florencia</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-florencia.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasflorencia@lasierra.com.mx</p>
+	</div>
+								<div class="datosSucs" id=" Elv">
+									<h2>Sucursal El Valle</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-elValle.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasdelicias@lasierra.com.mx</p>
+								</div>
+								<div class="datosSucs" id=" Dur">
+									<h2>Sucursal Durango</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-durango.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasdurango@lasierra.com.mx</p>
+	</div>
+								<div class="datosSucs" id=" Del">
+									<h2>Sucursal Delicias</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-delicias.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasdelicias@lasierra.com.mx</p>
+	</div>
+							</div>
+						</div>
+						
+						
 						<div id="map-canvas" class="col-md-12"></div>
 					</div>
 				</div>

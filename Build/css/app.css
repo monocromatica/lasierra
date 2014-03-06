@@ -442,14 +442,41 @@ blockquote {
 }
 .info_suc {
   width: 30%;
-  height: 500px;
+  height: 450px;
+  margin: 25px 25px 25px 15px;
+  right: 15px;
   z-index: 98;
   background-color: #ffffff;
   position: absolute;
   margin-left: 67.5%;
   float: right;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+.todasSucs .datosSucs h2 {
+  padding: 1% 5% 5% 25%;
+  color: #b52a31;
+}
+.todasSucs .datosSucs h4 {
+  color: #595959;
+  font-family: sans-serif;
+  padding-left: 5%;
+}
+.todasSucs .datosSucs img {
+  padding: 2% 5% 2% 20%;
+  image-size: 150%;
+}
+.todasSucs .datosSucs p {
+  font-family: sans-serif;
+  text-align: justify;
+  margin: 2%;
+  color: #595959;
+  padding-left: 5%;
 }
 /* Small devices (480px and down) class="info_suc" */
+/* Small devices (480px and down) */
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
