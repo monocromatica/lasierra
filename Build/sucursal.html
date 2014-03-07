@@ -10,9 +10,37 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <!-- @stylesheet bootstrap app chocolate nivo-slider default hotspot fs.wallpaper -->
+        <link rel='stylesheet' href='css/bootstrap.css'>
+<link rel='stylesheet' href='css/app.css'>
+<link rel='stylesheet' href='fonts/chocolate.css'>
+<link rel='stylesheet' href='css/nivo-slider.css'>
+<link rel='stylesheet' href='css/themes/default/default.css'>
+<link rel='stylesheet' href='css/hotspot.css'>
+<link rel='stylesheet' href='css/fs.wallpaper.css'>
 		
-		<!-- @reload -->
+		
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
@@ -315,7 +343,12 @@
 		
       }
       	    </script>
-		<!-- @javascript bootstrap.min main jquery.nivo.slider.pack hotspot fs.wallpaper jquery.quovolver -->
+		<script src='js/vendor/bootstrap.min.js'></script>
+<script src='js/main.js'></script>
+<script src='js/jquery.nivo.slider.pack.js'></script>
+<script src='js/hotspot.js'></script>
+<script src='js/fs.wallpaper.js'></script>
+<script src='js/jquery.quovolver.js'></script>
 
     </head>
     <body class="BGSuc" onload="initialize()">
@@ -323,7 +356,26 @@
             <p class="chromeframe">Su navegadore es<strong>anticuado</strong>. Por favor <a href="http://browsehappy.com/">actualice el navegador</a> para tener una mejor experiencia del sitio.</p>
         <![endif]-->
 		
-		<!-- @include _header.html -->
+				<header>
+			<div id="menuBG">
+				<div class="container">
+					<div class="row">
+						<div id="logo" class="col-md-3">
+							<a href="index.html"><img src="img/logo.png" alt="Pizzería La Sierra" /></a>
+						</div>
+						<nav id="menu" class="col-md-9 text-right">
+							<ul class="list-inline">
+								<li><a href="index.html">Inicio</a></li>
+								<li><a href="top10.html">Men&uacute; Top 10</a></li>
+								<li class='current'><a class='current' href="sucursal.html">Sucursales</a></li>
+								<li><a href="">La Sierra Kids</a></li>
+								<li><a href="contacto.html">Contacto</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
 		
 		<div class="container contenedor">
 		    <div class="row">
@@ -525,6 +577,11 @@
 	    	</div>
     	</footer>
     	
-		<!-- @include _analytics.html -->
+		        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>
