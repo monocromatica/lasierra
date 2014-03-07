@@ -51,12 +51,17 @@
 	  </script>    
 	  <script type="text/javascript">
 	  $(document).ready(function(){
-			  		alert("hola como estas?");
-					$('.info_suc').hide();			  		
-		  		});
+		  alert("hola como estas?");
+		  $('.info_suc').hide();
+		  $('#Chihua').hide();
+		  $('#Sono').hide();
+		  $('#Guana').hide();
+		  $('#Coahu').hide();
+		});
 
 	  //inicia la funcion 
 	 	  function initialize() {
+	 	  var marker;
 	 	  //opcines del mapa
         var myOptions = {
           center: new google.maps.LatLng(19.361357, -99.107666),
@@ -66,10 +71,15 @@
         //constructor del mapa
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             myOptions);
-             /* 
-			--------marcadores-----------	 		
-        */
+				
         var icon_pizzas = 'img/sucursales/ping.png';
+        var Sonora= document.getElementById("Sonora");
+        var Chihuahua= document.getElementById("Chihuahua");
+        var Coahuila= document.getElementById("Coahuila");
+        var Guanajuato= document.getElementById("Guanajuato");
+
+        //Array con las variables de la posicion de los marcadores
+        //Se puede hacer una clase con todo y nada mas cambiar las coordenadas
         
         var marker=[];
         
@@ -143,19 +153,110 @@
 			animation: google.maps.Animation.DROP,
 			icon: icon_pizzas
 		});
-				//var datosSucs=[]
+		
+		
+		
+		//Seleccionas un boton te aparecen las sucursales
+		
+		google.maps.event.addDomListener(Sonora, 'click', byeMarkerSonora);
+		google.maps.event.addDomListener(Chihuahua,'click',byeMarkerChihuahua);
+		google.maps.event.addDomListener(Coahuila, 'click', byeMarkerCoahuila);
+		google.maps.event.addDomListener(Guanajuato,'click',byeMarkerGuanajuato);
+		
+		//Aparece la info de los marcadores cada que les das click
+		google.maps.event.addListener(marker[9], 'click', procesaClick);//Victoria
+		google.maps.event.addListener(marker[8], 'click', procesaClick2);//Sendero
+		google.maps.event.addListener(marker[7], 'click', procesaClick3);//San Angel
+		google.maps.event.addListener(marker[6], 'click', procesaClick4);//Saltillo
+		google.maps.event.addListener(marker[5], 'click', procesaClick5);//NCG
+		google.maps.event.addListener(marker[3], 'click', procesaClick6);//LasTorres
+		google.maps.event.addListener(marker[4], 'click', procesaClick7);//Florencia
+		google.maps.event.addListener(marker[2], 'click', procesaClick8);//ElValle
+		google.maps.event.addListener(marker[0], 'click', procesaClick9);//Durango
+		google.maps.event.addListener(marker[1], 'click', procesaClick10);//Delicias
+		
+		//Funciones
 		
 		function setAllMap(map) {
 			for (var i = 0; i < marker.length; i++) {
 				marker[i].setMap(map);
 			}
 		}
+		
+		function byeMarkerSonora() {
+			marker[3].setMap(map);
+			marker[4].setMap(map);
+			marker[5].setMap(map);
+			marker[0].setMap(null);
+			marker[1].setMap(null);
+			marker[2].setMap(null);
+			marker[6].setMap(null);
+			marker[7].setMap(null);
+			marker[8].setMap(null);
+			marker[9].setMap(null);
+			$('#Sono').show();
+			$('#Guana').hide();
+			$('#Coahu').hide();
+			$('#Chihua').hide();
+			
 
-		google.maps.event.addListener(marker[9], 'click', procesaClick);
+		}
+		
+		function byeMarkerChihuahua(){
+			marker[0].setMap(null);
+			marker[1].setMap(null);
+			marker[2].setMap(null);
+			marker[3].setMap(null);
+			marker[4].setMap(null);
+			marker[5].setMap(null);
+			marker[6].setMap(map);
+			marker[7].setMap(map);
+			marker[8].setMap(map);
+			marker[9].setMap(map);
+			$('#Chihua').show();
+			$('#Guana').hide();
+			$('#Coahu').hide();
+			$('#Sono').hide();
+		}
+		
+		function byeMarkerCoahuila(){
+			marker[0].setMap(null);
+			marker[8].setMap(null);
+			marker[9].setMap(null);
+			marker[3].setMap(null);
+			marker[4].setMap(null);
+			marker[5].setMap(null);
+			marker[6].setMap(null);
+			marker[7].setMap(null);
+			marker[1].setMap(map);
+			marker[2].setMap(map);
+			$('#Coahu').show();
+			$('#Guana').hide();
+			$('#Sono').hide();
+			$('#Chihua').hide();
+		}
+		
+		function byeMarkerGuanajuato(){
+			marker[9].setMap(null);
+			marker[1].setMap(null);
+			marker[2].setMap(null);
+			marker[3].setMap(null);
+			marker[4].setMap(null);
+			marker[5].setMap(null);
+			marker[6].setMap(null);
+			marker[7].setMap(null);
+			marker[8].setMap(null);
+			marker[0].setMap(map);
+			$('#Guana').show();
+			$('#Sono').hide();
+			$('#Coahu').hide();
+			$('#Chihua').hide();
+		}
+
+		
 		function procesaClick() {
 			$('.info_suc').hide("fast");
 			$('.info_suc').show("fast");
-			$('#Vic').removeClass("display");
 			$('#Sen').addClass("display");
 			$('#San').addClass("display");
 			$('#Sal').addClass("display");
@@ -165,8 +266,9 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Del').addClass("display");
+			$('#Vic').removeClass("display");
 		}
-		google.maps.event.addListener(marker[8], 'click', procesaClick2);
+		
 		function procesaClick2() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -182,7 +284,7 @@
 			$('#Sen').removeClass("display");
 			
 		}
-		google.maps.event.addListener(marker[7], 'click', procesaClick3);
+		
 		function procesaClick3() {
 			$('#Vic').addClass("display");
 			$('#Sen').addClass("display");
@@ -197,7 +299,7 @@
 			$('.info_suc').show("fast");
 			$('#San').removeClass("display");
 		}
-		google.maps.event.addListener(marker[6], 'click', procesaClick4);
+		
 		function procesaClick4() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -212,7 +314,7 @@
 			$('.info_suc').show("fast");
 			$('#Sal').removeClass("display");
 		}
-		google.maps.event.addListener(marker[5], 'click', procesaClick5);
+		
 		function procesaClick5() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -227,7 +329,7 @@
 			$('.info_suc').show("fast");
 			$('#Ncg').removeClass("display");
 		}
-		google.maps.event.addListener(marker[3], 'click', procesaClick6);
+		
 		function procesaClick6() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -242,7 +344,7 @@
 			$('.info_suc').show("fast");
 			$('#Las').removeClass("display");
 		}
-		google.maps.event.addListener(marker[4], 'click', procesaClick7);
+		
 		function procesaClick7() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -257,7 +359,7 @@
 			$('.info_suc').show("fast");
 			$('#Flo').removeClass("display");
 		}
-		google.maps.event.addListener(marker[2], 'click', procesaClick8);
+		
 		function procesaClick8() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -272,7 +374,7 @@
 			$('.info_suc').show("fast");
 			$('#Elv').removeClass("display");
 		}
-		google.maps.event.addListener(marker[0], 'click', procesaClick9);
+		
 		function procesaClick9() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -287,7 +389,7 @@
 			$('.info_suc').show("fast");
 			$('#Dur').removeClass("display");
 		}
-		google.maps.event.addListener(marker[1], 'click', procesaClick10);
+		
 		function procesaClick10() {
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
@@ -302,46 +404,15 @@
 			$('.info_suc').show("fast");
 			$('#Del').removeClass("display");
 		}
-		
-		marker.setMap(map);
-		/*
-		$('#chihuahua').click(function(){
-			$('#chihuahua').addClass("active");
-			$('#Chihua').show();
-			$('#sonora').removeClass("active");
-			$('#coahuila').removeClass("active");
-			$('#guanajuato').removeClass("active");
+	
+		$( "#cerrar" ).click(function() {
+			$( ".info_suc" ).hide( "fast" );
 		});
-		
-		$('#sonora').click(function(){
-			$('#sonora').addClass("active");
-			$('#Sono').show();
-			$('#chihuahua').removeClass("active");
-			$('#coahuila').removeClass("active");
-			$('#guanajuato').removeClass("active");
-		});
-		
-		$('#coahuila').click(function(){
-			$('#coahuila').addClass("active");
-			$('#Coahu').show();
-			$('#chihuahua').removeClass("active");
-			$('#sonora').removeClass("active");
-			$('#guanajuato').removeClass("active");
-		});
-
-
-		$('#guanajuato').click(function(){
-			$('#guanajuato').addClass("active");
-			$('#Guana').show();
-			$('#chihuahua').removeClass("active");
-			$('#coahuila').removeClass("active");
-			$('#sonora').removeClass("active");
-		});
-*/
-			
-// Añadir el marcador al mapa con una llamada a setMap();
 		
       }
+      
+      //carga el mapa
+      google.maps.event.addDomListener(window, 'load', initialize);
       	    </script>
 		<script src='js/vendor/bootstrap.min.js'></script>
 <script src='js/main.js'></script>
@@ -393,15 +464,14 @@
 		      <div class="col-md-3 img_suc"><img src="img/sucImg.png" alt="Imágen_Sucursal" /></div>
 		    </div>
 			<div class="container mapa">
-			<ul class="nav nav-tabs">
-					  <li class="active" id="chihuahua"><input type="button" value="Chihuahua" /></li>
-					  <li id="sonora"><input onclick="clearMarkers();" type="button" value="Sonora" /></li>
-					  <li id="guanajuato"><input type="button" value="Guanajuato" /></li>
-					  <li id="coahuila"><input type="button" value="Coahuila" /></li>
-					</ul>
-				<div class="row">
-					<div class="col-md-12" id="mapa">
-						<!--<div id="Chihua">
+			<div id="tabEstados">
+					<ul class="nav nav-tabs">
+					  <li id="Chihuahua"><a href="#" data-toggle="tab">Chihuahua</a></li>
+					  <li id="Sonora"><a href="#" data-toggle="tab">Sonora</a></li>
+					  <li id="Guanajuato"><a href="#" data-toggle="tab">Guanajuato</a></li>
+					  <li id="Coahuila"><a href="#" data-toggle="tab">Coahuila</a></li>
+					</ul>	
+					<div id="Chihua">
 							<ul class="row btn">
 						  		<li class="col-md-3"><a href="#">Victoria</a></li>
 						  		<li class="col-md-3"><a href="#">Sendero</a></li>
@@ -409,14 +479,14 @@
 						  		<li class="col-md-3"><a href="#">Saltillo</a></li>
 						  	</ul>
 					  	</div>
-					  	<div id=#Sono>					
+					  	<div id="Sono">					
 								<ul class="row btn Sono">	
 						  		<li class="col-md-4"><a href="#">NCG</a></li>
 						  		<li class="col-md-4"><a href="#">Las Torres</a></li>
 						  		<li class="col-md-4"><a href="#">Florencia</a></li>
 						  	</ul>
-						  </div>					
-						  <div id="#Coahu">
+						  </div>				
+						  <div id="Coahu">
 							<ul class="row btn Coahu">
 						  		<li class="col-md-6"><a href="#">Durango</a></li>
 						  		<li class="col-md-6"><a href="#">El Valle</a></li>
@@ -426,8 +496,12 @@
 					  		<ul class="row btn Guana">
 					  			<li class="col-md-12"><a href="#">Delicias</a></li>
 					  		</ul>
-					  	</div>-->
+					  	</div>
+			</div>					
+			<div class="row">
+					<div class="col-md-12" id="mapa">
 						<div class="info_suc">
+							<div id="cerrar">  X  </div>
 							<div class="todasSucs">
 								<div id="Vic" class="display chihuahua">
 									<h2>Sucursal Victoria</h2>
