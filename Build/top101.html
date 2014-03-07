@@ -10,35 +10,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel='stylesheet' href='css/bootstrap.css'>
-<link rel='stylesheet' href='css/app.css'>
-<link rel='stylesheet' href='fonts/chocolate.css'>
-<link rel='stylesheet' href='css/hotspot.css'>
-<link rel='stylesheet' href='css/pageslide.css'>
+        <link rel='stylesheet' href='ab166bb1a35eae7d742f0a69da52831c.css'>
 		
 		
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 		<script type="text/javascript" src="js/midway.min.js"></script>
@@ -249,10 +223,7 @@
     	</footer>
     	
     	
-		<script src='js/vendor/bootstrap.min.js'></script>
-<script src='js/main.js'></script>
-<script src='js/hotspot.js'></script>
-<script src='js/pageslide.js'></script>
+		<script src='abd4ec719d3cd5e76413a21db0dbdef0.js'></script>
 		<script type="text/javascript">
 		    $(document).ready(function(){
 		    	$("#hotspot-27").hotspot({ "show_on" : "mouseover" });
