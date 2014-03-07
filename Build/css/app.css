@@ -478,6 +478,16 @@ blockquote {
 .display {
   display: none;
 }
+#cerrar {
+  width: 15px;
+  height: 15px;
+  background-color: #b52a31;
+  color: #ffffff;
+  float: right;
+  border-radius: 50px;
+  padding: 0px 0px 6px 3px;
+  margin: 5px 5px 0 0;
+}
 /* Small devices (480px and down) class="info_suc" */
 /* Small devices (480px and down) */
 /* Small devices (tablets, 768px and up) */
