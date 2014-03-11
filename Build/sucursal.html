@@ -54,7 +54,7 @@
 		  $('.info_suc').hide();
 		  $('#Chihua').hide();
 		  $('#Sono').hide();
-		  $('#Guana').hide();
+		  $('#Duran').hide();
 		  $('#Coahu').hide();
 		});
 
@@ -75,7 +75,7 @@
         var Sonora= document.getElementById("Sonora");
         var Chihuahua= document.getElementById("Chihuahua");
         var Coahuila= document.getElementById("Coahuila");
-        var Guanajuato= document.getElementById("Guanajuato");
+        var Durango= document.getElementById("Durango");
 
         //Array con las variables de la posicion de los marcadores
         //Se puede hacer una clase con todo y nada mas cambiar las coordenadas
@@ -85,21 +85,29 @@
         
         //posiciones de las sucursales
         
-        posiciones[0]= new google.maps.LatLng(-27.0,130.0);//Delicias
-        posiciones[1]= new google.maps.LatLng(38.664067, -117.070313);//Durango
-        posiciones[2]= new google.maps.LatLng(40.157885, -95.800781);//El Valle
-        posiciones[3]= new google.maps.LatLng(53.298056, 46.054688);//Las Torres
-        posiciones[4]= new google.maps.LatLng(55.347889, 95.625000);//Florencia
-        posiciones[5]= new google.maps.LatLng(0.701391, -65.489502);//NCG
-        posiciones[6]= new google.maps.LatLng(-0.406491, -69.609375);//Saltillo
-        posiciones[7]= new google.maps.LatLng(34.261757, 89.648438);//San Angel
-        posiciones[8]= new google.maps.LatLng(31.266813, -97.382813);//Sendero
-        posiciones[9]= new google.maps.LatLng(21.163282, -98.701172);//Victoria
+        posiciones[0]= new google.maps.LatLng(28.196315, -105.462981);//Delicias
+        posiciones[1]= new google.maps.LatLng(24.024383, -104.671270);//Durango
+        posiciones[2]= new google.maps.LatLng(29.839140, -107.470292);//El Valle
+        posiciones[3]= new google.maps.LatLng(31.638420, -106.390466);//Plaza Las Torres
+        posiciones[4]= new google.maps.LatLng(28.646459, -106.067873);//Plaza Florencia
+        posiciones[5]= new google.maps.LatLng(30.422879, -107.914786);//Nuevo Casas Grandes
+        posiciones[6]= new google.maps.LatLng(25.445469, -100.985059);//Saltillo
+        posiciones[7]= new google.maps.LatLng(28.651636, -106.131222);//Plaza San Angel
+        posiciones[8]= new google.maps.LatLng(31.693475, -106.379528);//Plaza Sendero
+        posiciones[9]= new google.maps.LatLng(28.643060, -106.071015);//Plaza Victoria
         posiciones[10]= new google.maps.LatLng(28.795042, -106.149902);//Estado de Chihuahua
         posiciones[11]= new google.maps.LatLng(29.801028, -110.830078);//Estado de Sonora
         posiciones[12]= new google.maps.LatLng(28.399555, -101.865234);//Estado de Coahuila
-        posiciones[13]= new google.maps.LatLng(20.940118, -101.250000);//Estado de Guanajuato
+        posiciones[13]= new google.maps.LatLng(20.940118, -101.250000);//Estado de Durango
         posiciones[14]= new google.maps.LatLng(22.709056, -101.997070);//Republica
+        posiciones[15]= new google.maps.LatLng(28.772802, -107.002488);//Campo101
+        posiciones[16]= new google.maps.LatLng(28.402389, -106.839595);//Plaza Sierra Madre
+        posiciones[17]= new google.maps.LatLng(26.927143, -105.651225);//PARRAL
+        posiciones[18]= new google.maps.LatLng(28.658671, -106.100576);//Plaza San Felipe
+        posiciones[19]= new google.maps.LatLng(28.456313, -106.904991);//km6
+        posiciones[20]= new google.maps.LatLng(28.637886, -106.912921);//km27
+        posiciones[21]= new google.maps.LatLng(29.095309, -111.022568);//hermosillo
+        
         
         
         
@@ -173,6 +181,55 @@
 			animation: google.maps.Animation.DROP,
 			icon: icon_pizzas
 		});
+		//campo101
+		marker[10] = new google.maps.Marker({
+			position: posiciones[15],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//plaza sierra madre
+		marker[11] = new google.maps.Marker({
+			position: posiciones[16],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//km6
+		marker[12] = new google.maps.Marker({
+			position: posiciones[19],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//km27
+		marker[13] = new google.maps.Marker({
+			position: posiciones[20],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//san felipe
+		marker[14] = new google.maps.Marker({
+			position: posiciones[18],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//parral
+		marker[15] = new google.maps.Marker({
+			position: posiciones[17],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//hermosillo
+		marker[16] = new google.maps.Marker({
+			position: posiciones[21],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
 		
 		
 		
@@ -181,7 +238,7 @@
 		google.maps.event.addDomListener(Sonora, 'click', byeMarkerSonora);
 		google.maps.event.addDomListener(Chihuahua,'click',byeMarkerChihuahua);
 		google.maps.event.addDomListener(Coahuila, 'click', byeMarkerCoahuila);
-		google.maps.event.addDomListener(Guanajuato,'click',byeMarkerGuanajuato);
+		google.maps.event.addDomListener(Durango,'click', byeMarkerDurango);
 		
 		//Aparece la info de los marcadores cada que les das click
 		google.maps.event.addListener(marker[9], 'click', procesaClick);//Victoria
@@ -194,6 +251,13 @@
 		google.maps.event.addListener(marker[2], 'click', procesaClick8);//ElValle
 		google.maps.event.addListener(marker[0], 'click', procesaClick9);//Durango
 		google.maps.event.addListener(marker[1], 'click', procesaClick10);//Delicias
+		google.maps.event.addListener(marker[10], 'click', procesaClick11);//campo101
+		google.maps.event.addListener(marker[11], 'click', procesaClick12);//plaza sierra madre
+		google.maps.event.addListener(marker[12], 'click', procesaClick13);//km6
+		google.maps.event.addListener(marker[13], 'click', procesaClick14);//km27
+		google.maps.event.addListener(marker[14], 'click', procesaClick15);//san felipe
+		google.maps.event.addListener(marker[15], 'click', procesaClick16);//parral
+		google.maps.event.addListener(marker[16], 'click', procesaClick17);//hermosillo
 		
 		//Funciones
 		
@@ -273,12 +337,63 @@
 			map.setZoom(10);
 		});
 		
+		$('#safBtn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[18]);
+			map.setZoom(10);
+		});
+		
+		$('#km6Btn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[19]);
+			map.setZoom(10);
+		});
+		
+		$('#km2Btn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[20]);
+			map.setZoom(10);
+		});
+		
+		$('#parBtn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[17]);
+			map.setZoom(10);
+		});
+		
+		$('#plsBtn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[16]);
+			map.setZoom(10);
+		});
+		
+		$('#camBtn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[15]);
+			map.setZoom(10);
+		});
+		
+		$('#herBtn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[21]);
+			map.setZoom(10);
+		});
+		
+		
+		
 		$('#TodasSucs').click(function(){
 			$('.info_suc').hide("fast");
 			map.setCenter(posiciones[14]);
 			map.setZoom(5);
 			$('#Sono').hide();
-			$('#Guana').hide();
+			$('#Duran').hide();
 			$('#Coahu').hide();
 			$('#Chihua').hide();
 			marker[3].setMap(map);
@@ -312,7 +427,7 @@
 			marker[8].setMap(null);
 			marker[9].setMap(null);
 			$('#Sono').show();
-			$('#Guana').hide();
+			$('#Duran').hide();
 			$('#Coahu').hide();
 			$('#Chihua').hide();
 			
@@ -334,7 +449,7 @@
 			marker[8].setMap(map);
 			marker[9].setMap(map);
 			$('#Chihua').show();
-			$('#Guana').hide();
+			$('#Duran').hide();
 			$('#Coahu').hide();
 			$('#Sono').hide();
 		}
@@ -354,12 +469,12 @@
 			marker[1].setMap(map);
 			marker[2].setMap(map);
 			$('#Coahu').show();
-			$('#Guana').hide();
+			$('#Duran').hide();
 			$('#Sono').hide();
 			$('#Chihua').hide();
 		}
 		
-		function byeMarkerGuanajuato(){
+		function byeMarkerDurango(){
 			$('.info_suc').hide("fast");
 			map.setCenter(posiciones[13]);
 			map.setZoom(7);
@@ -373,7 +488,7 @@
 			marker[7].setMap(null);
 			marker[8].setMap(null);
 			marker[0].setMap(map);
-			$('#Guana').show();
+			$('#Duran').show();
 			$('#Sono').hide();
 			$('#Coahu').hide();
 			$('#Chihua').hide();
@@ -514,6 +629,105 @@
 			$('#Sen').addClass("display");
 			$('#Del').removeClass("display");
 		}
+		
+		function showCam(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		function showKm6(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		function showKm2(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		function showSaf(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		function showPls(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		function showPar(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		function showHer(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		
+		//falta remover y agregar las variables a cada funcion de las show();
+		//y a las funciones byeMarker hacer lo smismo;
+		
+		
+		
+		
 		function procesaClick() {
 			infoSuc();
 			showVic();
@@ -563,6 +777,41 @@
 		function procesaClick10() {
 			infoSuc();
 			showDel();
+		}
+		
+		function procesaClick11() {
+			infoSuc();
+			showCam();
+		}
+		
+		function procesaClick12() {
+			infoSuc();
+			showPls();
+		}
+		
+		function procesaClick13() {
+			infoSuc();
+			showKm6();
+		}
+		
+		function procesaClick14() {
+			infoSuc();
+			showKm2();
+		}
+		
+		function procesaClick15() {
+			infoSuc();
+			showSaf();
+		}
+		
+		function procesaClick16() {
+			infoSuc();
+			showPar();
+		}
+		
+		function procesaClick17() {
+			infoSuc();
+			showHer();
 		}
 	
 		$( "#cerrar" ).click(function() {
@@ -618,7 +867,7 @@
 		    	  	<li >Chihuahua</li>
 		    	  	<li>Coahuila</li>
 		    	  	<li>Sonora</li>
-		    	  	<li>Guanajuato</li>
+		    	  	<li>Durango</li>
 		    	  </ul>
 		      </div>
 		      <div class="col-md-3 img_suc"><img src="img/sucImg.png" alt="Imágen_Sucursal" /></div>
@@ -629,7 +878,7 @@
 					  <li id="TodasSucs" class="active"><a href="#mapa" data-toggle="tab">Todas nuestras sucursales</a></li>
 					  <li id="Chihuahua"><a href="#" data-toggle="tab">Chihuahua</a></li>
 					  <li id="Sonora"><a href="#" data-toggle="tab">Sonora</a></li>
-					  <li id="Guanajuato"><a href="#" data-toggle="tab">Guanajuato</a></li>
+					  <li id="Durango"><a href="#" data-toggle="tab">Durango</a></li>
 					  <li id="Coahuila"><a href="#" data-toggle="tab">Coahuila</a></li>
 					</ul>	
 					<div id="Chihua">
@@ -649,9 +898,59 @@
 										<span class="glyphicon glyphicon-map-marker"></span>San Ángel
 									</button>
 						  		</li>
-						  		<li class="col-md-3" id="salBtn">
+						  		<li class="col-md-3" id="ncgBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
-										<span class="glyphicon glyphicon-map-marker"></span>Saltillo
+										<span class="glyphicon glyphicon-map-marker"></span>Casas Grandes
+									</button>
+								</li>
+								<li class="col-md-3" id="km6Btn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Km 6
+									</button>
+								</li>
+								<li class="col-md-3" id="camBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Campo 101
+									</button>
+								</li>
+								<li class="col-md-3" id="parBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Parral
+									</button>
+								</li>
+								<li class="col-md-3" id="plsBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Sierra Madre
+									</button>
+								</li>
+								<li class="col-md-3" id="safBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>San Felipe
+									</button>
+								</li>
+								<li class="col-md-3" id="delBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Delicias
+									</button>
+								</li>
+								<li class="col-md-3" id="elvBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>El Valle
+									</button>
+								</li>
+								<li class="col-md-3" id="km2Btn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Km 27
+									</button>
+								</li>
+								<li class="col-md-3" id="floBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Florencia
+									</button>
+								</li>
+								<li class="col-md-3" id="lasBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Las Torres
 									</button>
 								</li>
 						  	</ul>
@@ -660,40 +959,25 @@
 								<ul class="row btn Sono">	
 						  		<li class="col-md-4" id="ncgBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
-										<span class="glyphicon glyphicon-map-marker"></span>NCG
-									</button>
-								</li>
-						  		<li class="col-md-4" id="lasBtn">
-						  			<button type="button" class="btn btn-default btn-lg">
-										<span class="glyphicon glyphicon-map-marker"></span>Las Torres
-									</button>
-								</li>
-						  		<li class="col-md-4" id="floBtn">
-						  			<button type="button" class="btn btn-default btn-lg">
-										<span class="glyphicon glyphicon-map-marker"></span>Florencia
+										<span class="glyphicon glyphicon-map-marker"></span>Hermosillo
 									</button>
 								</li>
 						  	</ul>
 						  </div>				
 						  <div id="Coahu">
 							<ul class="row btn Coahu">
-						  		<li class="col-md-6" id="durBtn">
+						  		<li class="col-md-6" id="salBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
-										<span class="glyphicon glyphicon-map-marker"></span>Durango
-									</button>
-								</li>
-						  		<li class="col-md-6" id="elvBtn">
-						  			<button type="button" class="btn btn-default btn-lg">
-										<span class="glyphicon glyphicon-map-marker"></span>El Valle
+										<span class="glyphicon glyphicon-map-marker"></span>Saltillo
 									</button>
 								</li>
 						  	</ul>
 						  </div>
-					  	<div id="Guana">
-					  		<ul class="row btn Guana ">
-					  			<li class="col-md-12" id="delBtn">
+					  	<div id="Duran">
+					  		<ul class="row btn Duran ">
+					  			<li class="col-md-12" id="durBtn">
 					  				<button type="button" class="btn btn-default btn-lg">
-										<span class="glyphicon glyphicon-map-marker"></span>Delicias
+										<span class="glyphicon glyphicon-map-marker"></span>Durango
 									</button>
 								</li>
 					  		</ul>
@@ -743,85 +1027,7 @@
 									<h4>E-mail</h4> 
 									<p>pizzassanAngel@lasierra.com.mx</p>
 	</div>
-								<div id="Sal" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
-								<div id="Ncg" class="display sonora">
-									<h2>Sucursal NCG</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-ncg.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasncg@lasierra.com.mx</p>
-	</div>
-								<div id="Las" class="display sonora">
-									<h2>Sucursal Las Torres</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-lasTorres.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasLastorres@lasierra.com.mx</p>
-	</div>
-								<div id="Flo" class="display sonora">
-									<h2>Sucursal Florencia</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-florencia.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasflorencia@lasierra.com.mx</p>
-	</div>
-								<div id="Elv" class="display coahuila">
-									<h2>Sucursal El Valle</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-elValle.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasdelicias@lasierra.com.mx</p>
-								</div>
-								<div id="Dur" class="display coahuila">
-									<h2>Sucursal Durango</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-durango.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasdurango@lasierra.com.mx</p>
-	</div>
-								<div id="Del" class="display guanajuato">
+								<div id="Del" class="display chihuahua">
 									<h2>Sucursal Delicias</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-delicias.jpg" />
 									<h4>Dirección</h4>
@@ -834,6 +1040,176 @@
 									<h4>E-mail</h4> 
 									<p>pizzasdelicias@lasierra.com.mx</p>
 	</div>
+								<div id="Cam" class="display chihuahua">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Km6" class="display chihuahua">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Km2" class="display chihuahua">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Par" class="display chihuahua">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Pls" class="display chihuahua">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Saf" class="display chihuahua">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Ncg" class="display chihuahua">
+									<h2>Sucursal NCG</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-ncg.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasncg@lasierra.com.mx</p>
+	</div>
+								<div id="Las" class="display chihuahua">
+									<h2>Sucursal Las Torres</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-lasTorres.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasLastorres@lasierra.com.mx</p>
+	</div>
+								<div id="Flo" class="display chihuahua">
+									<h2>Sucursal Florencia</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-florencia.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasflorencia@lasierra.com.mx</p>
+	</div>
+								<div id="Elv" class="display chihuahua">
+									<h2>Sucursal El Valle</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-elValle.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasdelicias@lasierra.com.mx</p>
+								</div>
+								<div id="Sal" class="display coahuila">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Her" class="display sonora">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzassaltillo@lasierra.com.mx</p>
+	</div>
+								<div id="Dur" class="display durango">
+									<h2>Sucursal Durango</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-durango.jpg" />
+									<h4>Dirección</h4>
+									<p> Periferico norte esquina con alcalde #99922 
+									<br/> Col. La granja feliz.</p>
+	
+									<h4>Teléfonos</h4>
+									<p>33-33-33-33-33 
+									<br /> 77-33-77-33-99</p>
+									<h4>E-mail</h4> 
+									<p>pizzasdurango@lasierra.com.mx</p>
+	</div>
+								
 							</div>
 						</div>
 						
