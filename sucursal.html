@@ -9,6 +9,7 @@
         <title>Pizzería La Sierra -  La Pizza Menonita</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/app.css">
 
         <!-- @stylesheet bootstrap app chocolate nivo-slider default hotspot fs.wallpaper -->
 		
@@ -221,8 +222,8 @@
 		google.maps.event.addListener(marker[3], 'click', procesaClick6);//LasTorres
 		google.maps.event.addListener(marker[4], 'click', procesaClick7);//Florencia
 		google.maps.event.addListener(marker[2], 'click', procesaClick8);//ElValle
-		google.maps.event.addListener(marker[0], 'click', procesaClick9);//Durango
-		google.maps.event.addListener(marker[1], 'click', procesaClick10);//Delicias
+		google.maps.event.addListener(marker[1], 'click', procesaClick9);//Durango
+		google.maps.event.addListener(marker[0], 'click', procesaClick10);//Delicias
 		google.maps.event.addListener(marker[10], 'click', procesaClick11);//campo101
 		google.maps.event.addListener(marker[11], 'click', procesaClick12);//plaza sierra madre
 		google.maps.event.addListener(marker[12], 'click', procesaClick13);//km6
@@ -311,49 +312,49 @@
 		
 		$('#safBtn').click(function(){
 			$('.info_suc').show("fast");
-			showDel();
+			showSaf();
 			map.setCenter(posiciones[18]);
 			map.setZoom(10);
 		});
 		
 		$('#km6Btn').click(function(){
 			$('.info_suc').show("fast");
-			showDel();
+			showKm6();
 			map.setCenter(posiciones[19]);
 			map.setZoom(10);
 		});
 		
 		$('#km2Btn').click(function(){
 			$('.info_suc').show("fast");
-			showDel();
+			showKm2();
 			map.setCenter(posiciones[20]);
 			map.setZoom(10);
 		});
 		
 		$('#parBtn').click(function(){
 			$('.info_suc').show("fast");
-			showDel();
+			showPar();
 			map.setCenter(posiciones[17]);
 			map.setZoom(10);
 		});
 		
 		$('#plsBtn').click(function(){
 			$('.info_suc').show("fast");
-			showDel();
+			showPls();
 			map.setCenter(posiciones[16]);
 			map.setZoom(10);
 		});
 		
 		$('#camBtn').click(function(){
 			$('.info_suc').show("fast");
-			showDel();
+			showCam();
 			map.setCenter(posiciones[15]);
 			map.setZoom(10);
 		});
 		
 		$('#herBtn').click(function(){
 			$('.info_suc').show("fast");
-			showDel();
+			showHer();
 			map.setCenter(posiciones[21]);
 			map.setZoom(10);
 		});
@@ -377,7 +378,14 @@
 			marker[6].setMap(map);
 			marker[7].setMap(map);
 			marker[8].setMap(map);
-			marker[9].setMap(map);	
+			marker[9].setMap(map);
+			marker[10].setMap(map);
+			marker[11].setMap(map);
+			marker[12].setMap(map);
+			marker[13].setMap(map);
+			marker[14].setMap(map);	
+			marker[15].setMap(map);
+			marker[16].setMap(map);
 		})
 		
 		
@@ -388,16 +396,23 @@
 			$('.info_suc').hide("fast");
 			map.setCenter(posiciones[11]);
 			map.setZoom(7);
-			marker[3].setMap(map);
-			marker[4].setMap(map);
-			marker[5].setMap(map);
 			marker[0].setMap(null);
 			marker[1].setMap(null);
 			marker[2].setMap(null);
+			marker[3].setMap(null);
+			marker[4].setMap(null);
+			marker[5].setMap(null);
 			marker[6].setMap(null);
 			marker[7].setMap(null);
 			marker[8].setMap(null);
 			marker[9].setMap(null);
+			marker[10].setMap(null);
+			marker[11].setMap(null);
+			marker[12].setMap(null);
+			marker[13].setMap(null);
+			marker[14].setMap(null);
+			marker[15].setMap(null);
+			marker[16].setMap(map);
 			$('#Sono').show();
 			$('#Duran').hide();
 			$('#Coahu').hide();
@@ -410,16 +425,23 @@
 			$('.info_suc').hide("fast");
 			map.setCenter(posiciones[10]);
 			map.setZoom(7);
-			marker[0].setMap(null);
 			marker[1].setMap(null);
-			marker[2].setMap(null);
-			marker[3].setMap(null);
-			marker[4].setMap(null);
-			marker[5].setMap(null);
-			marker[6].setMap(map);
+			marker[6].setMap(null);
+			marker[16].setMap(null);
+			marker[0].setMap(map);
+			marker[2].setMap(map);
+			marker[3].setMap(map);
+			marker[4].setMap(map);
+			marker[5].setMap(map);
 			marker[7].setMap(map);
 			marker[8].setMap(map);
 			marker[9].setMap(map);
+			marker[10].setMap(map);
+			marker[11].setMap(map);
+			marker[12].setMap(map);
+			marker[13].setMap(map);
+			marker[14].setMap(map);
+			marker[15].setMap(map);
 			$('#Chihua').show();
 			$('#Duran').hide();
 			$('#Coahu').hide();
@@ -431,15 +453,22 @@
 			map.setCenter(posiciones[12]);
 			map.setZoom(7);
 			marker[0].setMap(null);
-			marker[8].setMap(null);
-			marker[9].setMap(null);
+			marker[1].setMap(null);
+			marker[2].setMap(null);
 			marker[3].setMap(null);
 			marker[4].setMap(null);
 			marker[5].setMap(null);
-			marker[6].setMap(null);
 			marker[7].setMap(null);
-			marker[1].setMap(map);
-			marker[2].setMap(map);
+			marker[8].setMap(null);
+			marker[9].setMap(null);
+			marker[10].setMap(null);
+			marker[11].setMap(null);
+			marker[12].setMap(null);
+			marker[13].setMap(null);
+			marker[14].setMap(null);
+			marker[15].setMap(null);
+			marker[16].setMap(null);
+			marker[6].setMap(map);
 			$('#Coahu').show();
 			$('#Duran').hide();
 			$('#Sono').hide();
@@ -450,8 +479,7 @@
 			$('.info_suc').hide("fast");
 			map.setCenter(posiciones[13]);
 			map.setZoom(7);
-			marker[9].setMap(null);
-			marker[1].setMap(null);
+			marker[0].setMap(null);
 			marker[2].setMap(null);
 			marker[3].setMap(null);
 			marker[4].setMap(null);
@@ -459,7 +487,15 @@
 			marker[6].setMap(null);
 			marker[7].setMap(null);
 			marker[8].setMap(null);
-			marker[0].setMap(map);
+			marker[9].setMap(null);
+			marker[10].setMap(null);
+			marker[11].setMap(null);
+			marker[12].setMap(null);
+			marker[13].setMap(null);
+			marker[14].setMap(null);
+			marker[15].setMap(null);
+			marker[16].setMap(null);
+			marker[1].setMap(map);
 			$('#Duran').show();
 			$('#Sono').hide();
 			$('#Coahu').hide();
@@ -472,7 +508,7 @@
 		}
 
 		function showVic(){
-			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
 			$('#San').addClass("display");
 			$('#Sal').addClass("display");
 			$('#Ncg').addClass("display");
@@ -480,6 +516,13 @@
 			$('#Flo').addClass("display");
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
 			$('#Vic').removeClass("display");
 		}
@@ -493,19 +536,33 @@
 			$('#Flo').addClass("display");
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
 			$('#Sen').removeClass("display");
 		}
 		
 		function showSan(){
 			$('#Vic').addClass("display");
-			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Sal').addClass("display");
 			$('#Ncg').addClass("display");
 			$('#Las').addClass("display");
 			$('#Flo').addClass("display");
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
 			$('#San').removeClass("display");
 		}
@@ -513,25 +570,39 @@
 		function showSal(){
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
-			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Ncg').addClass("display");
 			$('#Las').addClass("display");
 			$('#Flo').addClass("display");
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
-			$('#Del').addClass("display");	
-			$('#Sal').removeClass("display");		
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Sal').removeClass("display");
 		}
 		
 		function showNcg(){
 			$('#Vic').addClass("display");
 			$('#San').addClass("display");
 			$('#Sal').addClass("display");
-			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Las').addClass("display");
 			$('#Flo').addClass("display");
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
 			$('#Ncg').removeClass("display");
 		}
@@ -541,12 +612,19 @@
 			$('#San').addClass("display");
 			$('#Sal').addClass("display");
 			$('#Ncg').addClass("display");
-			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Flo').addClass("display");
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
-			$('#Las').removeClass("display");			
+			$('#Las').removeClass("display");
 		}
 		
 		function showFlo(){
@@ -555,9 +633,16 @@
 			$('#Sal').addClass("display");
 			$('#Ncg').addClass("display");
 			$('#Las').addClass("display");
-			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
 			$('#Flo').removeClass("display");
 
@@ -570,8 +655,15 @@
 			$('#Ncg').addClass("display");
 			$('#Las').addClass("display");
 			$('#Flo').addClass("display");
-			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
 			$('#Elv').removeClass("display");
 		}
@@ -584,7 +676,14 @@
 			$('#Las').addClass("display");
 			$('#Flo').addClass("display");
 			$('#Elv').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
 			$('#Del').addClass("display");
 			$('#Dur').removeClass("display");
 		}
@@ -599,6 +698,13 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Saf').addClass("display");
 			$('#Del').removeClass("display");
 		}
 		
@@ -612,7 +718,14 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
-			$('#Del').removeClass("display");
+			$('#Saf').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Cam').removeClass("display");
 		}
 		
 		function showKm6(){
@@ -625,7 +738,14 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
-			$('#Del').removeClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Km6').removeClass("display");
 		}
 		
 		function showKm2(){
@@ -638,7 +758,14 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
-			$('#Del').removeClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Km2').removeClass("display");
 		}
 		
 		function showSaf(){
@@ -651,7 +778,14 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
-			$('#Del').removeClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Saf').removeClass("display");
 		}
 		
 		function showPls(){
@@ -664,7 +798,14 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
-			$('#Del').removeClass("display");
+			$('#Cam').addClass("display");
+			$('#Her').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Del').addClass("display");
+			$('#Pls').removeClass("display");
 		}
 		
 		function showPar(){
@@ -677,7 +818,14 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
-			$('#Del').removeClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Her').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Del').addClass("display");
+			$('#Par').removeClass("display");
 		}
 		
 		function showHer(){
@@ -690,7 +838,14 @@
 			$('#Elv').addClass("display");
 			$('#Dur').addClass("display");
 			$('#Sen').addClass("display");
-			$('#Del').removeClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Del').addClass("display");
+			$('#Her').removeClass("display");
 		}
 		
 		
@@ -821,82 +976,82 @@
 		      <div class="col-md-3 img_suc"><img src="img/sucImg.png" alt="Imágen_Sucursal" /></div>
 		    </div>
 			<div class="container mapa">
-			<div id="tabEstados">
+				<div id="tabEstados">
 					<ul class="nav nav-tabs botones">
-					  <li id="TodasSucs" class="active"><a href="#mapa" data-toggle="tab">Todas nuestras sucursales</a></li>
-					  <li id="Chihuahua"><a href="#" data-toggle="tab">Chihuahua</a></li>
-					  <li id="Sonora"><a href="#" data-toggle="tab">Sonora</a></li>
-					  <li id="Durango"><a href="#" data-toggle="tab">Durango</a></li>
-					  <li id="Coahuila"><a href="#" data-toggle="tab">Coahuila</a></li>
+						<li id="TodasSucs" class="active"><a href="#mapa" data-toggle="tab">Todas nuestras sucursales</a></li>
+						<li id="Chihuahua"><a data-toggle="tab">Chihuahua</a></li>
+						<li id="Sonora"><a data-toggle="tab">Sonora</a></li>
+						<li id="Durango"><a data-toggle="tab">Durango</a></li>
+						<li id="Coahuila"><a data-toggle="tab">Coahuila</a></li>
 					</ul>	
-					<div id="Chihua">
+						<div id="Chihua">
 							<ul class="row btn Chihua">
-								<li class="col-md-3" id="vicBtn">
+								<li class="col-md-1" id="vicBtn">
 									<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Victoria
 									</button>
 								</li>
-						  		<li class="col-md-3" id="senBtn">
+						  		<li class="col-md-1" id="senBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Sendero
 									</button>
 								</li>
-						  		<li class="col-md-3" id="sanBtn">
+						  		<li class="col-md-1" id="sanBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>San Ángel
 									</button>
 						  		</li>
-						  		<li class="col-md-3" id="ncgBtn">
+						  		<li class="col-md-1" id="ncgBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Casas Grandes
 									</button>
 								</li>
-								<li class="col-md-3" id="km6Btn">
+								<li class="col-md-1" id="km6Btn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Km 6
 									</button>
 								</li>
-								<li class="col-md-3" id="camBtn">
+								<li class="col-md-1" id="camBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Campo 101
 									</button>
 								</li>
-								<li class="col-md-3" id="parBtn">
+								<li class="col-md-1" id="parBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Parral
 									</button>
 								</li>
-								<li class="col-md-3" id="plsBtn">
+								<li class="col-md-1" id="plsBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Sierra Madre
 									</button>
 								</li>
-								<li class="col-md-3" id="safBtn">
+								<li class="col-md-1" id="safBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>San Felipe
 									</button>
 								</li>
-								<li class="col-md-3" id="delBtn">
+								<li class="col-md-1" id="delBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Delicias
 									</button>
 								</li>
-								<li class="col-md-3" id="elvBtn">
+								<li class="col-md-1" id="elvBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>El Valle
 									</button>
 								</li>
-								<li class="col-md-3" id="km2Btn">
+								<li class="col-md-1" id="km2Btn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Km 27
 									</button>
 								</li>
-								<li class="col-md-3" id="floBtn">
+								<li class="col-md-1" id="floBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Florencia
 									</button>
 								</li>
-								<li class="col-md-3" id="lasBtn">
+								<li class="col-md-1" id="lasBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Las Torres
 									</button>
@@ -904,15 +1059,15 @@
 						  	</ul>
 					  	</div>
 					  	<div id="Sono">					
-								<ul class="row btn Sono">	
+							<ul class="row btn Sono">	
 						  		<li class="col-md-4" id="ncgBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
 										<span class="glyphicon glyphicon-map-marker"></span>Hermosillo
 									</button>
 								</li>
 						  	</ul>
-						  </div>				
-						  <div id="Coahu">
+						</div>				
+						<div id="Coahu">
 							<ul class="row btn Coahu">
 						  		<li class="col-md-6" id="salBtn">
 						  			<button type="button" class="btn btn-default btn-lg">
@@ -920,7 +1075,7 @@
 									</button>
 								</li>
 						  	</ul>
-						  </div>
+						</div>
 					  	<div id="Duran">
 					  		<ul class="row btn Duran ">
 					  			<li class="col-md-12" id="durBtn">
@@ -930,8 +1085,8 @@
 								</li>
 					  		</ul>
 					  	</div>
-			</div>					
-			<div class="row">
+				</div>					
+				<div class="row">
 					<div class="col-md-12" id="mapa">
 						<div class="info_suc">
 							<div id="cerrar">  X  </div>
@@ -940,224 +1095,292 @@
 									<h2>Sucursal Victoria</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-victoria.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Calle Benito Juárez No 3115, Plaza Victoria Local 25, 26, 27
+									<br/> Col. Centro
+									<br/>Chihuahua, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(614)4103800
+									<br />(614)4103814</p>
 									<h4>E-mail</h4> 
-									<p>pizzasvictoria@lasierra.com.mx</p>
+									<p>lasierravictoria@telmexmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Domingo a Domingo 8:00am a 10:00pm
+									</p>
 			 					</div>
 								<div id="Sen" class="display chihuahua">
 									<h2>Sucursal Sendero</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sendero.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Av. Francisco Villareal Torres No. 2050-A Int sub G, Plaza Comercial Sendero
+									<br/> Col. Valle del Sol
+									<br/>Cd. Juárez, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(656)66621987 
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzassendero@lasierra.com.mx</p>
-	</div>
+									<p>lasierrajuarez@gmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Domingo a Miercoles 7:30am a 9:30pm
+									<br/>Jueves a Sábado 7:30am a 10:30pm</p>
+								</div>
 								<div id="San" class="display chihuahua">
 									<h2>Sucursal San Ángel</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sanAngel.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Perif. de la Juventud 4101-2, Plaza San Angel
+									<br/>Col. Las Misiones
+									<br/>Chihuahua, Chihuahua. </p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(614) 4262500
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzassanAngel@lasierra.com.mx</p>
-	</div>
+									<p>compraspodelsa@gmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Miércoles 7:00am a 9:00pm
+									<br/>Jueves a Domingo 7:00am a 10:00pm
+									</p>
+								</div>
 								<div id="Del" class="display chihuahua">
 									<h2>Sucursal Delicias</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-delicias.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p>Av. Ferrocarril Oriente #301
+									<br/> Col. Centro
+									<br/> Delicias, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(639) 4700209
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzasdelicias@lasierra.com.mx</p>
-	</div>
+									<p>pizzeriaevandy@gmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Domingo 8:00am a 10:00pm
+									</p>
+								</div>
 								<div id="Cam" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
+									<h2>Sucursal Campo 101</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Campo 101, Carr a Cuauhtémoc - Bachiniva
+									<br/> Col. Vianna
+									<br/>Cuauhtémoc, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(625)5841079
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<p>lasierra101@pizzerialasierra.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Sábado 7:30am a 8:30pm</p>
+								</div>
 								<div id="Km6" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
+									<h2>Sucursal Kilometro 6</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Km. 6 Carr a Alvaro Obregón s/n
+									<br/> Cuauhtémoc, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(625)5877125  
+									<br />(625)5877446</p>
 									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<p>info@pizzerialasierra.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Sábado 7:00am a 8:00pm</p>
+								</div>
 								<div id="Km2" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
+									<h2>Sucursal Kilometro 27</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Km 27 Carr a Álvaro Obregón s/n
+									<br/>Cuauhtémoc, Chihuahua.
+									</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>6255786262
+									<br />6255786136</p>
 									<h4>E-mail</h4> 
 									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<h4>Horario</h4>
+									<p>Lunes a Sábado 7:30am a 8:00pm
+									</p>
+								</div>
 								<div id="Par" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
+									<h2>Sucursal Parral</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Pedro de Lille y Dr. de Lille S/N
+									<br/> Col. Cnop
+									<br/>Parral, Chihuahua.
+									</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(627)5234848
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<p>fofo_pits@hotmail.com</p>
+									<h4>Horario</h4>
+									<p>Lunes a Domingo 6:30am a 9:30pm
+									</p>
+								</div>
 								<div id="Pls" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
+									<h2>Sucursal Plaza Sierra</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Av. 16 de Septiembre y Tlaxcala #1020, Plaza Comercial Sierra Madre
+									<br/> Col. Las Huertas
+									<br/>Cuauhtémoc, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(625)5828379 
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<p>pizzerialasierrawallmart@hotmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Domingo 8:00am a 8:00pm
+									</p>
+								</div>
 								<div id="Saf" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
+									<h2>Sucursal San Felipe</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Blvd. Antonio Ortiz Mena No. 3506 Local 1, Plaza San Felipe 
+									<br/> Col. Angel Trias
+									<br/> Chihuahua, Chihuahua.
+									</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(614)4132413 
+									<br />(614)4130405</p>
 									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<p>lasierravictoria@telmexmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Domingo 8:00am a 10:00pm
+									</p>
+								</div>
 								<div id="Ncg" class="display chihuahua">
-									<h2>Sucursal NCG</h2>
+									<h2>Sucursal Casas Grandes</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-ncg.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Av. Benito Juárez No 1401 Local 7 Plaza Paquime.
+									<br/>Col. Centro
+									<br/>Nuevo Casas Grandes, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(636) 6942022 
+									<br />(636) 6942345</p>
 									<h4>E-mail</h4> 
-									<p>pizzasncg@lasierra.com.mx</p>
-	</div>
+									<p>pizzasierrancg@hotmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Domingo 7:00am a 10:00pm
+									</p>
+								</div>
 								<div id="Las" class="display chihuahua">
 									<h2>Sucursal Las Torres</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-lasTorres.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Av. de las Torres No 2111 Int. 11F, Plaza Comercial Las Torres
+									<br/>Col. Lote Bravo
+									<br/>Cd. Juárez, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(656) 6811966 
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzasLastorres@lasierra.com.mx</p>
-	</div>
+									<p>pizzerialasierra.lastorres@hotmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Jueves 9:00am a 10:00pm
+									<br/>Viernes a Domingo 8:00am a 10:00pm</p>
+								</div>
 								<div id="Flo" class="display chihuahua">
 									<h2>Sucursal Florencia</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-florencia.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Av. Cristobal Colon 11520-1, Plaza Florencia 
+									<br/> Complejo Industrial Chihuahua
+									<br/>Chihuahua, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(614)4810202
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzasflorencia@lasierra.com.mx</p>
-	</div>
+									<p>contapodelsa@gmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Domingo 7:00am a 9:00pm
+									</p>
+								</div>
 								<div id="Elv" class="display chihuahua">
 									<h2>Sucursal El Valle</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-elValle.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p>Blvd. El Valle S/N 
+									<br/> Col. El Valle.
+									<br/> Buenaventura, Chihuahua.</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(636) 6632075
+									<br />Cel. (636) 1113590</p>
 									<h4>E-mail</h4> 
-									<p>pizzasdelicias@lasierra.com.mx</p>
+									<p>lizlitz@hotmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Sábado 7:30am a 9:00pm 
+									<br/>Domingo 11:30am a 9:00pm</p>
 								</div>
 								<div id="Sal" class="display coahuila">
 									<h2>Sucursal Saltillo</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Perif Luis Echeverria esquina con Colombia No 605 
+									<br/>Col. Latinoamericana 
+									<br/>Saltillo, Coahuila.
+ 									</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(844)4390002
+									<br />(844)4390006</p>
 									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<p>lasierrasaltillo@pizzerialasierra.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Sábado 8:00am a 10:15pm 
+									<br/>Domingos 1:00am a 9:00pm</p>
+								</div>
 								<div id="Her" class="display sonora">
-									<h2>Sucursal Saltillo</h2>
+									<h2>Sucursal Hermosillo</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Blvd. Garcia Morales No 547-8 
+									<br/> Col. Parque industrial
+									<br/>Hermosillo, Sonora.
+									</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>662 2615050 
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
+									<p>pzz_lasierrapizzashermosillo0413@hotmail.com
+									</p>
+									<h4>Horario</h4>
+									<p>Domingo a Jueves 7:00am a 10:00pm 
+									<br/>Viernes y Sábado 7:00am a 11:00pm</p>
+								</div>
 								<div id="Dur" class="display durango">
 									<h2>Sucursal Durango</h2>
 									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-durango.jpg" />
 									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
+									<p> Av 20 de Nov No 706 Pte. Casi esquina con Bruno Martínez
+									<br/> Zona Centro
+									<br/>Durango, Durango
+									</p>
 									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
+									<p>(618) 810593 
+									</p>
 									<h4>E-mail</h4> 
-									<p>pizzasdurango@lasierra.com.mx</p>
-	</div>
-								
+									<p>lasierradgo@pizzerialasierra.com
+									</p>
+									<h4>Horario</h4>
+									<p>Lunes a Jueves 8:00am a 9:00pm 
+									<br/>Domingos 8:00am a 10:00pm</p>
+								</div>
 							</div>
 						</div>
 						
