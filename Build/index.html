@@ -10,9 +10,41 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
+<<<<<<< HEAD
         <link rel='stylesheet' href='c8bf83e0775f7778ac6ab73276a4a1a2.css'>
+=======
+        <link rel='stylesheet' href='css/bootstrap.css'>
+<link rel='stylesheet' href='css/app.css'>
+<link rel='stylesheet' href='fonts/chocolate.css'>
+<link rel='stylesheet' href='css/nivo-slider.css'>
+<link rel='stylesheet' href='css/themes/default/default.css'>
+<link rel='stylesheet' href='css/hotspot.css'>
+<link rel='stylesheet' href='css/fs.wallpaper.css'>
+>>>>>>> FETCH_HEAD
 		
 		
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -33,9 +65,10 @@
 							<ul class="list-inline">
 								<li class='current'><a class='current' href="index.html">Inicio</a></li>
 								<li><a href="top10.html">Men&uacute; Top 10</a></li>
-								<li><a href="sucursal.html">Sucursales</a></li>
+								<li><a href="sucursales.html">Sucursales</a></li>
 								<li><a href="">La Sierra Kids</a></li>
 								<li><a href="contacto.html">Contacto</a></li>
+								<li><a href="sucursal.html">Contacto</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -74,10 +107,10 @@
 					<div class="col-md-6">
 						<div class="row">
 							<div class="col-md-5">
-								<h2>S&iacute;guenos en Facebook</h2>
+								<a class="link_blanco" href="https://www.facebook.com/pages/Pizzeria-La-Sierra/195695587153883?fref=ts" target="_blank"><h2>S&iacute;guenos en Facebook</h2><a/>
 							</div>
 							<div class="col-md-2">
-								<img src="img/facebook-ind.png" alt="facebook" />
+								<a href="https://www.facebook.com/pages/Pizzeria-La-Sierra/195695587153883?fref=ts" target="_blank"><img src="img/facebook-ind.png" alt="facebook" /></a>
 							</div>
 							<div class="col-md-5">
 								<p>donde tendremos ofertas exclusivas</p>
@@ -92,23 +125,34 @@
 		
 		
 			
-		<div id="hotspot-6" class="hs-wrap hs-loading">
-			
-			<img src="img/ensalada-index.jpg">
-			<div class="hs-spot-object" data-type="spot" data-x="614" data-y="475" data-width="30" data-height="30" data-popup-position="top" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
-			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
-			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="454" data-y="316" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
-			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Diversos estudios han demostrado su efectividad en el tratamiento de procesos inflamatorios cut&aacute;neos de dif&iacute;cil tratamiento, presentando, por v&iacute;a t&oacute;pica, una efectividad superior al tratamiento con antiinflamatorios de s&iacute;ntesis. Esto se debe a la buena penetrabilidad a trav&eacute;s de la piel que presentan los principios responsables de esta actividad, que llegan hasta las capas profundas de la dermis.</p>
-			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="182" data-y="391" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
-			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Diversos estudios han demostrado su efectividad en el tratamiento de procesos inflamatorios cut&aacute;neos de dif&iacute;cil tratamiento, presentando, por v&iacute;a t&oacute;pica, una efectividad superior al tratamiento con antiinflamatorios de s&iacute;ntesis. Esto se debe a la buena penetrabilidad a trav&eacute;s de la piel que presentan los principios responsables de esta actividad, que llegan hasta las capas profundas de la dermis.</p>
-			</div>
-			<div class="hs-spot-object" data-type="spot" data-x="384" data-y="655" data-width="30" data-height="30" data-popup-position="top" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
-			<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzanilla</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum non ea atque delectus perferendis minus minima aliquid assumenda similique.</p>
-			</div>
-			
-		</div>
+		<div id="hotspot-16" class="hs-wrap hs-loading">
+<img src="img/ensalada-index.jpg">
+<div class="hs-spot-object" data-type="spot" data-x="270" data-y="105" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Manzana</h4><p>Estudios científicos demuestran que la creencia popular de que tomar una manzana al día es garantía de buena salud no iría desencaminada, ya que ademas de potasio contienen altos niveles de fitoquímicos, estas sustancias previenen numerosas enfermedades, incluido el cáncer y el alzhéimer.</p>
+</div>
+<div class="hs-spot-object" data-type="spot" data-x="87" data-y="443" data-width="30" data-height="30" data-popup-position="top" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Elote</h4><p>Gracias a sus virtudes energéticas, el consumo de maíz resulta especialmente interesante para todas aquellas personas que practican deporte, y que a fin de cuentas necesitan que les proporcionen mucha energía, la cual sea digerida rápido. El maíz es el único cereal en el que encontramos betacaroteno, a la par que aporta fibras, hidratos de carbono, y una interesantísima cantidad de vitaminas dle grupo B (en particular B1 y B3). Por este motivo principal, el maíz ayuda a metabolizar las grasas de manera mucho más rápida, a la par que mejora el tránsito intestinal (ideal en casos de estreñimiento), y reduciendo el colesterol alto.</p>
+</div>
+<div class="hs-spot-object" data-type="spot" data-x="323" data-y="251" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Salchicha Menonita</h4><p>Este alimento es rico en sodio ya que 100 g. de esta carne contienen 2084 mg. de sodio.
+	•	Manzana.-Estudios científicos demuestran que la creencia popular de que tomar una manzana al día es garantía de buena salud no iría desencaminada, ya que ademas de potasio contienen altos niveles de fitoquímicos, estas sustancias previenen numerosas enfermedades, incluido el cáncer y el alzhéimer.</p>
+</div>
+<div class="hs-spot-object" data-type="spot" data-x="778" data-y="181" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Lechuga</h4><p>La lechuga tiene un alto contenido de agua (90-95%). Es rica en antioxidantes, como la vitaminas A, C, E, B1, B2, B3, B9 y K; minerales: fósforo, hierro, calcio, potasio y aminoácidos. Las hojas exteriores más verdes son las que tienen mayor contenido en vitamina C y hierro.</p>
+</div>
+<div class="hs-spot-object" data-type="spot" data-x="837" data-y="409" data-width="30" data-height="30" data-popup-position="right" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Queso</h4><p>El queso tiene una rica fuente de calcio, proteínas, y fósforo.</p>
+</div>
+<div class="hs-spot-object" data-type="spot" data-x="596" data-y="491" data-width="30" data-height="30" data-popup-position="bottom" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Zanahoria</h4><p>Las hortalizas más ricas en carotenos previenen algunos tipos de cáncer y enfermedades cardiovasculares, además de proteger la vista y los pulmones.</p>
+</div>
+<div class="hs-spot-object" data-type="spot" data-x="609" data-y="179" data-width="30" data-height="30" data-popup-position="left" data-visible="visible" data-tooltip-width="200" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Pimiento Morrón</h4><p>Todos los ejemplares del género Capsicum, como el pimiento y la guindilla, poseen magníficas propiedades rejuvenecedoras, protegen el corazón y la piel.</p>
+</div>
+<div class="hs-spot-object" data-type="spot" data-x="199" data-y="286" data-width="30" data-height="30" data-popup-position="bottom" data-visible="visible" data-tooltip-width="250" data-tooltip-auto-width="false">
+<img src="img/manzanillaS.jpg" alt="manzanilla"/><br /><h4>Semilla de Girasol</h4><p>Los niveles altos de vitamina E en las semillas de girasol se traducen en beneficios que incluyen menos riesgos de enfermedades cardiovasculares y arteriosclerosis así como niveles bajos de colesterol y mayor agudeza mental. Contienen un 76% de la cantidad diaria recomendada de vitamina E. Son también ricas en ácido fólico y magnesio. Disminuyen el riesgo de padecer cáncer. Las semillas de girasol son una buena fuente de vitamina E, colina, betaína, lignano y ácidos fenólicos, según demuestra un estudio de la Universidad Politécnica de Virginia.</p>
+</div>
+</div>
 		<div id="text-Ens">
 		    		<h1 class="titulo">Ensaladas</h1>
 		    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo at quia corrupti dignissimos neque in accusantium laborum quis expedita suscipit numquam qui</p>
@@ -132,33 +176,33 @@
     			<div class="row">
     				<div class="col-md-12">
 						<blockquote>
-						    <p>Ut eu consectetur nisi. Praesent facilisis diam nec sapien gravida non mattis justo imperdiet. Vestibulum nisl urna, euismod sit amet congue at, bibendum non risus.</p>
-						    <cite>&ndash; Quote Author (Quote #1)</cite>
+						    <p>Escucha, serás sabio; el comienzo de la sabiduría es el silencio.</p>
+						    <cite>&ndash; Pitágoras</cite>
 						</blockquote>
 						
 						<blockquote>
-						    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu eros velit, non blandit ipsum. Donec pretium, nibh vitae tristique tempor, enim sem condimentum lacus, vel mattis mauris risus id justo. Nullam tincidunt, augue sit amet euismod condimentum, orci elit dignissim odio, a viverra augue enim in lectus. Ut tempor commodo venenatis. Pellentesque pretium, ipsum nec bibendum facilisis, erat justo consequat tortor, iaculis suscipit eros est quis urna. Nunc gravida ornare nibh interdum sagittis.</p>
-						    <cite>&ndash; Quote Author (Quote #2)</cite>
+						    <p>Las nubes sólo duran un momento y el Sol es para toda la vida.</p>
+						    <cite>&ndash; Rabindranath Tagore</cite>
 						</blockquote>
 						
 						<blockquote>
-						    <p>Donec rutrum convallis viverra. Suspendisse vehicula, risus sit amet luctus pharetra, quam ante condimentum metus, porttitor vulputate magna felis quis dui.</p>
-						    <cite>&ndash; Quote Author (Quote #3)</cite>
+						    <p>Ofrecer amistad al que busca amor es dar pan al que se muere de sed.</p>
+						    <cite>&ndash; Gabriel García Márquez</cite>
 						</blockquote>
 						
 						<blockquote>
-						    <p>Suspendisse ipsum urna, pellentesque eget sagittis eget, porta eget ligula. Mauris id posuere nisl. Aliquam sit amet urna lorem. Donec et odio et velit ornare dapibus a sit amet odio. Praesent ornare cursus ante quis fringilla. Vivamus id egestas sapien. Nullam mollis elit eros, ac euismod neque. Nam placerat dictum congue.</p>
-						    <cite>&ndash; Quote Author (Quote #4)</cite>
+						    <p>Demasiado al Este es el Oeste.</p>
+						    <cite>&ndash; Proverbio inglés</cite>
 						</blockquote>
 						
 						<blockquote>
-						    <p>Nulla facilisi. Mauris vel mattis risus. Ut nec luctus tortor. In interdum pulvinar quam non pharetra. Proin sed diam in lorem varius tempor. Vestibulum porta, diam quis mollis rutrum, dolor lectus interdum leo, malesuada convallis purus tortor sed turpis.</p>
-						    <cite>&ndash; Quote Author (Quote #5)</cite>
+						    <p>Nada que se consiga sin pena y sin trabajo es verdaderamente valioso.</p>
+						    <cite>&ndash; Joseph Addison</cite>
 						</blockquote>
 						
 						<blockquote>
-						    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu eros velit, non blandit ipsum. Donec pretium, nibh vitae tristique tempor, enim sem condimentum lacus, vel mattis mauris risus id justo. Nullam tincidunt, augue sit amet euismod condimentum, orci elit dignissim odio, a viverra augue enim in lectus. Ut tempor commodo venenatis.</p>
-						    <cite>&ndash; Quote Author (Quote #6)</cite>
+						    <p>El hombre honesto no teme la luz ni la oscuridad.</p>
+						    <cite>&ndash; Thomas Fuller</cite>
 						</blockquote>	    				
     				</div>
     			</div>
@@ -215,7 +259,12 @@
     	
     	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-		<script src='7aa20bf8ef04ac6a2f58a6e333be89a9.js'></script>
+		<script src='js/vendor/bootstrap.min.js'></script>
+<script src='js/main.js'></script>
+<script src='js/jquery.nivo.slider.pack.js'></script>
+<script src='js/hotspot.js'></script>
+<script src='js/fs.wallpaper.js'></script>
+<script src='js/jquery.quovolver.js'></script>
 		<script type="text/javascript">
 		    	$(window).load(function() {
 		    	    $('#slider').nivoSlider({
@@ -244,7 +293,7 @@
 		</script>
 		<script type="text/javascript">
 		    $(document).ready(function(){
-		    	$("#hotspot-6").hotspot({ "show_on" : "mouseover" });
+		    	$("#hotspot-16").hotspot({ "show_on" : "mouseover" });
 		    });
 		</script>
 		<script type="text/javascript">

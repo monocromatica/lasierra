@@ -10,9 +10,38 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
+<<<<<<< HEAD
         <link rel='stylesheet' href='919e37f3398d769b268ab78fef02785d.css'>
+=======
+        <link rel='stylesheet' href='css/bootstrap.css'>
+<link rel='stylesheet' href='css/app.css'>
+<link rel='stylesheet' href='fonts/chocolate.css'>
+<link rel='stylesheet' href='css/fs.wallpaper.css'>
+>>>>>>> FETCH_HEAD
 		
 		
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -33,9 +62,10 @@
 							<ul class="list-inline">
 								<li><a href="index.html">Inicio</a></li>
 								<li><a href="top10.html">Men&uacute; Top 10</a></li>
-								<li><a href="sucursal.html">Sucursales</a></li>
+								<li><a href="sucursales.html">Sucursales</a></li>
 								<li><a href="">La Sierra Kids</a></li>
 								<li><a href="contacto.html">Contacto</a></li>
+								<li><a href="sucursal.html">Contacto</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -84,7 +114,9 @@
     	
     	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-		<script src='f16a0decf39ff989e4c508dc4adfb3ff.js'></script>
+		<script src='js/vendor/bootstrap.min.js'></script>
+<script src='js/main.js'></script>
+<script src='js/fs.wallpaper.js'></script>
 		<script type="text/javascript">
 		    $(document).ready(function(){
 		    	$("#nosHeader").wallpaper({

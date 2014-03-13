@@ -10,6 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
+<<<<<<< HEAD
         <link rel='stylesheet' href='c8bf83e0775f7778ac6ab73276a4a1a2.css'>
 		
 		
@@ -382,17 +383,44 @@
 		});
 		
       }
+=======
+        <link rel='stylesheet' href='css/bootstrap.css'>
+<link rel='stylesheet' href='css/app.css'>
+<link rel='stylesheet' href='fonts/chocolate.css'>
+<link rel='stylesheet' href='css/fs.wallpaper.css'>
+		
+		
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+>>>>>>> FETCH_HEAD
       
-      //carga el mapa
-      google.maps.event.addDomListener(window, 'load', initialize);
-      	    </script>
-		<script src='7aa20bf8ef04ac6a2f58a6e333be89a9.js'></script>
 
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
-    <body class="BGSuc" onload="initialize()">
+    <body id="contBG">
         <!--[if lt IE 7]>
             <p class="chromeframe">Su navegadore es<strong>anticuado</strong>. Por favor <a href="http://browsehappy.com/">actualice el navegador</a> para tener una mejor experiencia del sitio.</p>
         <![endif]-->
+
 		
 				<header>
 			<div id="menuBG">
@@ -405,9 +433,10 @@
 							<ul class="list-inline">
 								<li><a href="index.html">Inicio</a></li>
 								<li><a href="top10.html">Men&uacute; Top 10</a></li>
-								<li class='current'><a class='current' href="sucursal.html">Sucursales</a></li>
+								<li><a href="sucursales.html">Sucursales</a></li>
 								<li><a href="">La Sierra Kids</a></li>
 								<li><a href="contacto.html">Contacto</a></li>
+								<li class='current'><a class='current' href="sucursal.html">Contacto</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -415,202 +444,136 @@
 			</div>
 		</header>
 		
-		<div class="container contenedor">
-		    <div class="row">
-		      <div class="col-md-3 titulo"><h1 class="titulo_suc">Ubíca tu <br/> sucursal</h1></div>
-		      <div class="col-md-3 texto_suc">ackground: rgba(255, 255, 255, 0.9);-webkit-border-radius: 10px; -moz-border-radius: 10px;
-		      </div>
-		      <div class="col-md-3">
-		    	  <ul class="estados">
-		    	  	<li >Chihuahua</li>
-		    	  	<li>Coahuila</li>
-		    	  	<li>Sonora</li>
-		    	  	<li>Guanajuato</li>
-		    	  </ul>
-		      </div>
-		      <div class="col-md-3 img_suc"><img src="img/sucImg.png" alt="Imágen_Sucursal" /></div>
-		    </div>
-			<div class="container mapa">
-			<div id="tabEstados">
-					<ul class="nav nav-tabs">
-					  <li id="Chihuahua"><a href="#" data-toggle="tab">Chihuahua</a></li>
-					  <li id="Sonora"><a href="#" data-toggle="tab">Sonora</a></li>
-					  <li id="Guanajuato"><a href="#" data-toggle="tab">Guanajuato</a></li>
-					  <li id="Coahuila"><a href="#" data-toggle="tab">Coahuila</a></li>
-					</ul>	
-					<div id="Chihua">
-							<ul class="row btn">
-						  		<li class="col-md-3"><a href="#">Victoria</a></li>
-						  		<li class="col-md-3"><a href="#">Sendero</a></li>
-						  		<li class="col-md-3"><a href="#">San Ángel</a></li>
-						  		<li class="col-md-3"><a href="#">Saltillo</a></li>
-						  	</ul>
-					  	</div>
-					  	<div id="Sono">					
-								<ul class="row btn Sono">	
-						  		<li class="col-md-4"><a href="#">NCG</a></li>
-						  		<li class="col-md-4"><a href="#">Las Torres</a></li>
-						  		<li class="col-md-4"><a href="#">Florencia</a></li>
-						  	</ul>
-						  </div>				
-						  <div id="Coahu">
-							<ul class="row btn Coahu">
-						  		<li class="col-md-6"><a href="#">Durango</a></li>
-						  		<li class="col-md-6"><a href="#">El Valle</a></li>
-						  	</ul>
-						  </div>
-					  	<div id="Guana">
-					  		<ul class="row btn Guana">
-					  			<li class="col-md-12"><a href="#">Delicias</a></li>
-					  		</ul>
-					  	</div>
-			</div>					
-			<div class="row">
-					<div class="col-md-12" id="mapa">
-						<div class="info_suc">
-							<div id="cerrar">  X  </div>
-							<div class="todasSucs">
-								<div id="Vic" class="display chihuahua">
-									<h2>Sucursal Victoria</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-victoria.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasvictoria@lasierra.com.mx</p>
-			 					</div>
-								<div id="Sen" class="display chihuahua">
-									<h2>Sucursal Sendero</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sendero.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzassendero@lasierra.com.mx</p>
-	</div>
-								<div id="San" class="display chihuahua">
-									<h2>Sucursal San Ángel</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sanAngel.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzassanAngel@lasierra.com.mx</p>
-	</div>
-								<div id="Sal" class="display chihuahua">
-									<h2>Sucursal Saltillo</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzassaltillo@lasierra.com.mx</p>
-	</div>
-								<div id="Ncg" class="display sonora">
-									<h2>Sucursal NCG</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-ncg.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasncg@lasierra.com.mx</p>
-	</div>
-								<div id="Las" class="display sonora">
-									<h2>Sucursal Las Torres</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-lasTorres.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasLastorres@lasierra.com.mx</p>
-	</div>
-								<div id="Flo" class="display sonora">
-									<h2>Sucursal Florencia</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-florencia.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasflorencia@lasierra.com.mx</p>
-	</div>
-								<div id="Elv" class="display coahuila">
-									<h2>Sucursal El Valle</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-elValle.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasdelicias@lasierra.com.mx</p>
-								</div>
-								<div id="Dur" class="display coahuila">
-									<h2>Sucursal Durango</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-durango.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasdurango@lasierra.com.mx</p>
-	</div>
-								<div id="Del" class="display guanajuato">
-									<h2>Sucursal Delicias</h2>
-									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-delicias.jpg" />
-									<h4>Dirección</h4>
-									<p> Periferico norte esquina con alcalde #99922 
-									<br/> Col. La granja feliz.</p>
-	
-									<h4>Teléfonos</h4>
-									<p>33-33-33-33-33 
-									<br /> 77-33-77-33-99</p>
-									<h4>E-mail</h4> 
-									<p>pizzasdelicias@lasierra.com.mx</p>
-	</div>
-							</div>
+    	<div>
+    		<div id="verduras">
+	    		<img src="img/verduras.png" alt="verduras" width="480" height="1053">
+    		</div>
+    		<div class="container">
+    			<div class="row">
+    				<div id="formulario" class="col-md-8 col-md-offset-4">
+		    			<div id="contacInfo">
+						    <div class="row">
+						    	<h1 class="titulo" style="margin-left:20px;">Contactanos</h1>
+						    	<div class="col-md-6">
+						    		<div class="row">
+						    			<div class="col-md-2">
+						    				<img src="img/mapMarker.png" alt="mapMarker" width="17" height="24">
+						    			</div>
+						    			<div class="col-md-10" class="infor">
+						    				<h3 class="tituloS">Matriz</h3>
+						    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam repudiandae tenetur illo culpa voluptatum laboriosam.</p>
+						    				<a href="" class="btnRojo">ver mapa</a>
+						    			</div>
+						    		</div>
+						    		<br />
+						    		<br />
+						    		<div class="row">
+						    			<div class="col-md-2">
+						    				<img src="img/telefono.png" alt="telefono" width="21" height="29">
+						    			</div>
+						    			<div class="col-md-10">
+						    				<h3 class="tituloS">Tel&eacute;fonos</h3>
+						    				<p>01 800 1234 5678 <br />+52 625 1234 5678 <br />+52 625 1234 5678 <br />+52 625 1234 5678</p>
+						    			</div>
+						    		</div>
+						    	</div><!-- /.col-md-6 -->
+						    	<div class="col-md-6">
+							    	<div class="row">
+							    		<div class="col-md-2">
+							    			<img src="img/emailC.png" alt="emailC" width="28" height="20">
+							    		</div>
+							    		<div class="col-md-10">
+							    			<h3 class="tituloS">Email</h3>
+							    			<p>
+							    				<strong>Gerencia</strong>
+							    				<br />
+							    				<a href="">gerencia@pizzerialasierra.com</a>
+							    			</p>
+							    			<p>
+							    				<strong>Marketing</strong>
+							    				<br />
+							    				<a href="">mkt@pizzerialasierra.com</a>
+							    			</p>
+							    			<p>
+							    				<strong>Ventas</strong>
+							    				<br />
+							    				<a href="">ventas@pizzerialasierra.com</a>
+							    			</p>
+							    		</div>
+							    	</div>
+						    	</div><!-- /.col-md-6 -->
+						    </div><!-- .row -->
+						</div><!-- /#contactInfo -->
+						<!--
+<div class="formCont">
+						    	<form role="form" method="post" action="formulario.php" class="row">
+						    		<div class="col-md-12">
+						    			<br />
+						    			<h1 class="tituloS">Formulario</h1>
+						    		</div>
+						    		<div class="form-group col-md-6">
+						    		  	
+						    		    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Coloca tu nombre" required >
+						    		    <span id="messages"></span>
+						    		  </div>
+						    		  <div class="form-group col-md-6">
+						    		    <input type="email" class="form-control testBox" name="email" id="email" placeholder="Coloca tu email" required >
+						    		  </div>
+						    		  <div class="form-group col-md-6">
+						    		    <input type="text" class="form-control testBox" name="telephone" id="telephone" placeholder="Coloca tu teléfono">
+						    		  </div>
+									  <div class="form-group col-md-6">
+						    		    <input type="text" class="form-control testBox" name="ciudad" id="ciudad" placeholder="Coloca tu ciudad">
+						    		  </div>
+						    		  <div class="form-group col-md-12">
+						    		    <textarea  type="text" class="form-control testBox" name="comments" id="comments" placeholder="Déjanos tu mensaje" rows="5" required ></textarea>
+						    		    <button type="submit" value="enviar" class="btnRojo">enviar</button>
+						    		</div>							
+						    		
+						    		
+						    		<br />						
+						    	</form>
+						    </div>
 						</div>
-						
-						
-						<div id="map-canvas" class="col-md-12"></div>
-					</div>
-				</div>
-			</div>
-		</div>
+--><!-- #formCont -->
+  	  	  	  	  	  	<form role="form" method="post" action="formulario.php" class="row">
+  	  	  	  	  	  	  <div class="form-group col-md-6">
+  	  	  	  	  	  	    <label for="nombre">Nombre</label>
+  	  	  	  	  	  	    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"/>
+  	  	  	  	  	  	  </div>
+  	  	  	  	  	  	  <div class="form-group col-md-6">
+  	  	  	  	  	  	    <label for="ciudad">Ciudad</label>
+  	  	  	  	  	  	    <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="ciudad"/>
+  	  	  	  	  	  	  </div>
+  	  	  	  	  	  	  <div class="form-group col-md-6">
+  	  	  	  	  	  	    <label for="email">Email</label>
+  	  	  	  	  	  	    <input type="email" class="form-control" id="email" name="email" placeholder="email"/>
+  	  	  	  	  	  	  </div>
+  	  	  	  	  	  	  <div class="form-group col-md-6">
+  	  	  	  	  	  	    <label for="telefono">Teléfono</label>
+  	  	  	  	  	  	    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="telefono"/>
+  	  	  	  	  	  	  </div>
+  	  	  	  	  	  	  <div class="form-group col-md-12">
+  	  	  	  	  	  	    <label for="mensaje">Mensaje</label>
+  	  	  	  	  	  	    <textarea  type="text" class="form-control" id="mensaje" name="mensaje" placeholder="deja tu mensaje" rows="5" ></textarea>
+  	  	  	  	  	  	  </div>
+  	  	  	  	  	  	
+  	  	  	  	  	  	  	<div class="col-md-12">
+  	  	  	  	  	  	  		<button type="submit" class="btnRojo">enviar <span>&gt;</span></button>
+  	  	  	  	  	  	  	</div>
+  	  	  	  	  	  	</form>
+  	  	  	  	  	  	
+  	  	  	  	  	  	
+    				</div><!-- /#formulario -->
+    			</div><!-- /.row -->
+    		</div><!-- .container -->
+    	</div>
     	
-    	<footer>
+    	
+    	
+    	
+    	
+		    	<footer>
 	    	<div class="container">
 	    		<div class="row">
 	    			<div class="col-md-12 text-center"><img src="img/logo-footer.png" alt="Pizzería La Sierra" /></div>
@@ -618,6 +581,13 @@
 	    	</div>
     	</footer>
     	
+    	
+    	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+		<script src='js/vendor/bootstrap.min.js'></script>
+<script src='js/main.js'></script>
+<script src='js/fs.wallpaper.js'></script>
+
 		        <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
