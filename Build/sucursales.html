@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Pizzería La Sierra -  La Pizza Menonita</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/app.css">
+
+        <link rel='stylesheet' href='css/bootstrap.css'>
+<link rel='stylesheet' href='css/app.css'>
+<link rel='stylesheet' href='fonts/chocolate.css'>
+<link rel='stylesheet' href='css/nivo-slider.css'>
+<link rel='stylesheet' href='css/themes/default/default.css'>
+<link rel='stylesheet' href='css/hotspot.css'>
+<link rel='stylesheet' href='css/fs.wallpaper.css'>
+		
+		
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript"
+      <script type="text/javascript"
+	  	src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false">
+	  </script>    
+	  <script type="text/javascript">
+	  $(document).ready(function(){
+		  $('.info_suc').hide();
+		  $('#Chihua').hide();
+		  $('#Sono').hide();
+		  $('#Duran').hide();
+		  $('#Coahu').hide();
+		});
+
+	  //inicia la funcion 
+	 	  function initialize() {
+	 	  var marker;
+	 	  //opcines del mapa
+        var myOptions = {
+          center: new google.maps.LatLng(22.709056, -101.997070),
+          zoom: 5,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        //constructor del mapa
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            myOptions);
+				
+        var icon_pizzas = 'img/sucursales/ping.png';
+        var Sonora= document.getElementById("Sonora");
+        var Chihuahua= document.getElementById("Chihuahua");
+        var Coahuila= document.getElementById("Coahuila");
+        var Durango= document.getElementById("Durango");
+
+        //Array con las variables de la posicion de los marcadores
+        //Se puede hacer una clase con todo y nada mas cambiar las coordenadas
+        
+        var marker=[];
+        var posiciones=[];
+        
+        //posiciones de las sucursales
+        
+        posiciones[0]= new google.maps.LatLng(28.196315, -105.462981);//Delicias
+        posiciones[1]= new google.maps.LatLng(24.024383, -104.671270);//Durango
+        posiciones[2]= new google.maps.LatLng(29.839140, -107.470292);//El Valle
+        posiciones[3]= new google.maps.LatLng(31.638420, -106.390466);//Plaza Las Torres
+        posiciones[4]= new google.maps.LatLng(28.646459, -106.067873);//Plaza Florencia
+        posiciones[5]= new google.maps.LatLng(30.422879, -107.914786);//Nuevo Casas Grandes
+        posiciones[6]= new google.maps.LatLng(25.445469, -100.985059);//Saltillo
+        posiciones[7]= new google.maps.LatLng(28.651636, -106.131222);//Plaza San Angel
+        posiciones[8]= new google.maps.LatLng(31.693475, -106.379528);//Plaza Sendero
+        posiciones[9]= new google.maps.LatLng(28.643060, -106.071015);//Plaza Victoria
+        posiciones[10]= new google.maps.LatLng(28.795042, -106.149902);//Estado de Chihuahua
+        posiciones[11]= new google.maps.LatLng(29.801028, -110.830078);//Estado de Sonora
+        posiciones[12]= new google.maps.LatLng(26.881349, -101.381836);//Estado de Coahuila
+        posiciones[13]= new google.maps.LatLng(24.115892, -104.644775);//Estado de Durango
+        posiciones[14]= new google.maps.LatLng(22.709056, -101.997070);//Republica
+        posiciones[15]= new google.maps.LatLng(28.772802, -107.002488);//Campo101
+        posiciones[16]= new google.maps.LatLng(28.402389, -106.839595);//Plaza Sierra Madre
+        posiciones[17]= new google.maps.LatLng(26.927143, -105.651225);//PARRAL
+        posiciones[18]= new google.maps.LatLng(28.658671, -106.100576);//Plaza San Felipe
+        posiciones[19]= new google.maps.LatLng(28.456313, -106.904991);//km6
+        posiciones[20]= new google.maps.LatLng(28.637886, -106.912921);//km27
+        posiciones[21]= new google.maps.LatLng(29.095309, -111.022568);//hermosillo
+        
+        
+        
+        
+        //deliciasMarker
+		marker[0] = new google.maps.Marker({
+	    	position: posiciones[0],//new google.maps.LatLng(-27.0,130.0),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+	    });
+	    //durangoMarker
+	    marker[1] = new google.maps.Marker({
+			position: posiciones[1],//new google.maps.LatLng(38.664067, -117.070313),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//elvalleMarker
+		marker[2] = new google.maps.Marker({
+			position: posiciones[2], //new google.maps.LatLng(40.157885, -95.800781),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//torresMarker
+		marker[3] = new google.maps.Marker({
+			position: posiciones[3],//new google.maps.LatLng(53.298056, 46.054688),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//florenciaMarker
+		marker[4] = new google.maps.Marker({
+			position: posiciones[4],//new google.maps.LatLng(55.347889, 95.625000),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//ncgMarker
+		marker[5] = new google.maps.Marker({
+			position: posiciones[5],//new google.maps.LatLng(0.701391, -65.489502),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//saltilloMarker
+		marker[6] = new google.maps.Marker({
+			position: posiciones[6],//new google.maps.LatLng(-0.406491, -69.609375),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//sanangelMarker
+		marker[7] = new google.maps.Marker({
+			position: posiciones[7],//new google.maps.LatLng(34.261757, 89.648438),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//senderoMarker
+		marker[8] = new google.maps.Marker({
+			position: posiciones[8],//new google.maps.LatLng(31.266813, -97.382813),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//victoriaMarker
+		marker[9] = new google.maps.Marker({
+			position: posiciones[9],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//campo101
+		marker[10] = new google.maps.Marker({
+			position: posiciones[15],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//plaza sierra madre
+		marker[11] = new google.maps.Marker({
+			position: posiciones[16],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//km6
+		marker[12] = new google.maps.Marker({
+			position: posiciones[19],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//km27
+		marker[13] = new google.maps.Marker({
+			position: posiciones[20],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//san felipe
+		marker[14] = new google.maps.Marker({
+			position: posiciones[18],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//parral
+		marker[15] = new google.maps.Marker({
+			position: posiciones[17],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		//hermosillo
+		marker[16] = new google.maps.Marker({
+			position: posiciones[21],//new google.maps.LatLng(21.163282, -98.701172),
+			map: map,
+			animation: google.maps.Animation.DROP,
+			icon: icon_pizzas
+		});
+		
+		
+		
+		//Seleccionas un boton te aparecen las sucursales
+		
+		google.maps.event.addDomListener(Sonora, 'click', byeMarkerSonora);
+		google.maps.event.addDomListener(Chihuahua,'click',byeMarkerChihuahua);
+		google.maps.event.addDomListener(Coahuila, 'click', byeMarkerCoahuila);
+		google.maps.event.addDomListener(Durango,'click', byeMarkerDurango);
+		
+		//Aparece la info de los marcadores cada que les das click
+		google.maps.event.addListener(marker[9], 'click', procesaClick);//Victoria
+		google.maps.event.addListener(marker[8], 'click', procesaClick2);//Sendero
+		google.maps.event.addListener(marker[7], 'click', procesaClick3);//San Angel
+		google.maps.event.addListener(marker[6], 'click', procesaClick4);//Saltillo
+		google.maps.event.addListener(marker[5], 'click', procesaClick5);//NCG
+		google.maps.event.addListener(marker[3], 'click', procesaClick6);//LasTorres
+		google.maps.event.addListener(marker[4], 'click', procesaClick7);//Florencia
+		google.maps.event.addListener(marker[2], 'click', procesaClick8);//ElValle
+		google.maps.event.addListener(marker[1], 'click', procesaClick9);//Durango
+		google.maps.event.addListener(marker[0], 'click', procesaClick10);//Delicias
+		google.maps.event.addListener(marker[10], 'click', procesaClick11);//campo101
+		google.maps.event.addListener(marker[11], 'click', procesaClick12);//plaza sierra madre
+		google.maps.event.addListener(marker[12], 'click', procesaClick13);//km6
+		google.maps.event.addListener(marker[13], 'click', procesaClick14);//km27
+		google.maps.event.addListener(marker[14], 'click', procesaClick15);//san felipe
+		google.maps.event.addListener(marker[15], 'click', procesaClick16);//parral
+		google.maps.event.addListener(marker[16], 'click', procesaClick17);//hermosillo
+		
+		//Funciones
+		
+		function setAllMap(map) {
+			for (var i = 0; i < marker.length; i++) {
+				marker[i].setMap(map);
+			}
+		}
+		
+		$('#vicBtn').click(function(){
+			$('.info_suc').show("fast");
+			showVic();
+			map.setCenter(posiciones[9]);
+			map.setZoom(13);
+		});
+		
+		$('#senBtn').click(function(){
+			$('.info_suc').show("fast");
+			showSen();
+			map.setCenter(posiciones[8]);
+			map.setZoom(13);
+		});
+		
+		$('#sanBtn').click(function(){
+			$('.info_suc').show("fast");
+			showSan();
+			map.setCenter(posiciones[7]);
+			map.setZoom(13);
+		});
+		
+		$('#salBtn').click(function(){
+			$('.info_suc').show("fast");
+			showSal();
+			map.setCenter(posiciones[6]);
+			map.setZoom(13);
+		});
+		
+		$('#ncgBtn').click(function(){
+			$('.info_suc').show("fast");
+			showNcg();
+			map.setCenter(posiciones[5]);
+			map.setZoom(13);
+		});
+		
+		$('#lasBtn').click(function(){
+			$('.info_suc').show("fast");
+			showLas();
+			map.setCenter(posiciones[3]);
+			map.setZoom(13);
+		});
+		
+		$('#floBtn').click(function(){
+			$('.info_suc').show("fast");
+			showFlo();
+			map.setCenter(posiciones[4]);
+			map.setZoom(13);
+		});
+		
+		$('#elvBtn').click(function(){
+			$('.info_suc').show("fast");
+			showElv();
+			map.setCenter(posiciones[2]);
+			map.setZoom(13);
+		});
+		
+		$('#durBtn').click(function(){
+			$('.info_suc').show("fast");
+			showDur();
+			map.setCenter(posiciones[1]);
+			map.setZoom(13);
+		});
+		
+		$('#delBtn').click(function(){
+			$('.info_suc').show("fast");
+			showDel();
+			map.setCenter(posiciones[0]);
+			map.setZoom(13);
+		});
+		
+		$('#safBtn').click(function(){
+			$('.info_suc').show("fast");
+			showSaf();
+			map.setCenter(posiciones[18]);
+			map.setZoom(13);
+		});
+		
+		$('#km6Btn').click(function(){
+			$('.info_suc').show("fast");
+			showKm6();
+			map.setCenter(posiciones[19]);
+			map.setZoom(13);
+		});
+		
+		$('#km2Btn').click(function(){
+			$('.info_suc').show("fast");
+			showKm2();
+			map.setCenter(posiciones[20]);
+			map.setZoom(13);
+		});
+		
+		$('#parBtn').click(function(){
+			$('.info_suc').show("fast");
+			showPar();
+			map.setCenter(posiciones[17]);
+			map.setZoom(13);
+		});
+		
+		$('#plsBtn').click(function(){
+			$('.info_suc').show("fast");
+			showPls();
+			map.setCenter(posiciones[16]);
+			map.setZoom(13);
+			//.css({"height": "560"})
+		});
+		
+		$('#camBtn').click(function(){
+			$('.info_suc').show("fast");
+			showCam();
+			map.setCenter(posiciones[15]);
+			map.setZoom(13);
+		});
+		
+		$('#herBtn').click(function(){
+			$('.info_suc').show("fast");
+			showHer();
+			map.setCenter(posiciones[21]);
+			map.setZoom(13);
+		});
+		
+		
+		
+		$('#TodasSucs').click(function(){
+			$('.info_suc').hide("fast");
+			map.setCenter(posiciones[14]);
+			map.setZoom(5);
+			$('#Sono').hide();
+			$('#Duran').hide();
+			$('#Coahu').hide();
+			$('#Chihua').hide();
+			marker[3].setMap(map);
+			marker[4].setMap(map);
+			marker[5].setMap(map);
+			marker[0].setMap(map);
+			marker[1].setMap(map);
+			marker[2].setMap(map);
+			marker[6].setMap(map);
+			marker[7].setMap(map);
+			marker[8].setMap(map);
+			marker[9].setMap(map);
+			marker[10].setMap(map);
+			marker[11].setMap(map);
+			marker[12].setMap(map);
+			marker[13].setMap(map);
+			marker[14].setMap(map);	
+			marker[15].setMap(map);
+			marker[16].setMap(map);
+		})
+		
+		
+		
+
+		
+		function byeMarkerSonora() {
+			$('.info_suc').hide("fast");
+			map.setCenter(posiciones[11]);
+			map.setZoom(7);
+			marker[0].setMap(null);
+			marker[1].setMap(null);
+			marker[2].setMap(null);
+			marker[3].setMap(null);
+			marker[4].setMap(null);
+			marker[5].setMap(null);
+			marker[6].setMap(null);
+			marker[7].setMap(null);
+			marker[8].setMap(null);
+			marker[9].setMap(null);
+			marker[10].setMap(null);
+			marker[11].setMap(null);
+			marker[12].setMap(null);
+			marker[13].setMap(null);
+			marker[14].setMap(null);
+			marker[15].setMap(null);
+			marker[16].setMap(map);
+			$('#Sono').show();
+			$('#Duran').hide();
+			$('#Coahu').hide();
+			$('#Chihua').hide();
+			
+
+		}
+		
+		function byeMarkerChihuahua(){
+			$('.info_suc').hide("fast");
+			map.setCenter(posiciones[10]);
+			map.setZoom(7);
+			marker[1].setMap(null);
+			marker[6].setMap(null);
+			marker[16].setMap(null);
+			marker[0].setMap(map);
+			marker[2].setMap(map);
+			marker[3].setMap(map);
+			marker[4].setMap(map);
+			marker[5].setMap(map);
+			marker[7].setMap(map);
+			marker[8].setMap(map);
+			marker[9].setMap(map);
+			marker[10].setMap(map);
+			marker[11].setMap(map);
+			marker[12].setMap(map);
+			marker[13].setMap(map);
+			marker[14].setMap(map);
+			marker[15].setMap(map);
+			$('#Chihua').show();
+			$('#Duran').hide();
+			$('#Coahu').hide();
+			$('#Sono').hide();
+		}
+		
+		function byeMarkerCoahuila(){
+			$('.info_suc').hide("fast");
+			map.setCenter(posiciones[12]);
+			map.setZoom(7);
+			marker[0].setMap(null);
+			marker[1].setMap(null);
+			marker[2].setMap(null);
+			marker[3].setMap(null);
+			marker[4].setMap(null);
+			marker[5].setMap(null);
+			marker[7].setMap(null);
+			marker[8].setMap(null);
+			marker[9].setMap(null);
+			marker[10].setMap(null);
+			marker[11].setMap(null);
+			marker[12].setMap(null);
+			marker[13].setMap(null);
+			marker[14].setMap(null);
+			marker[15].setMap(null);
+			marker[16].setMap(null);
+			marker[6].setMap(map);
+			$('#Coahu').show();
+			$('#Duran').hide();
+			$('#Sono').hide();
+			$('#Chihua').hide();
+		}
+		
+		function byeMarkerDurango(){
+			$('.info_suc').hide("fast");
+			map.setCenter(posiciones[13]);
+			map.setZoom(7);
+			marker[0].setMap(null);
+			marker[2].setMap(null);
+			marker[3].setMap(null);
+			marker[4].setMap(null);
+			marker[5].setMap(null);
+			marker[6].setMap(null);
+			marker[7].setMap(null);
+			marker[8].setMap(null);
+			marker[9].setMap(null);
+			marker[10].setMap(null);
+			marker[11].setMap(null);
+			marker[12].setMap(null);
+			marker[13].setMap(null);
+			marker[14].setMap(null);
+			marker[15].setMap(null);
+			marker[16].setMap(null);
+			marker[1].setMap(map);
+			$('#Duran').show();
+			$('#Sono').hide();
+			$('#Coahu').hide();
+			$('#Chihua').hide();
+		}
+
+		function infoSuc(){
+			$('.info_suc').hide("fast");
+			$('.info_suc').show("fast");
+		}
+
+		function showVic(){
+			$('#Saf').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Vic').removeClass("display");
+		}
+		
+		function showSen(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Sen').removeClass("display");
+		}
+		
+		function showSan(){
+			$('#Vic').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#San').removeClass("display");
+		}
+		
+		function showSal(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Sal').removeClass("display");
+		}
+		
+		function showNcg(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Ncg').removeClass("display");
+		}
+		
+		function showLas(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Las').removeClass("display");
+		}
+		
+		function showFlo(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Flo').removeClass("display");
+
+		}
+		
+		function showElv(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Elv').removeClass("display");
+		}
+		
+		function showDur(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Dur').removeClass("display");
+		}
+		
+		function showDel(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Del').removeClass("display");
+		}
+		
+		function showCam(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Cam').removeClass("display");
+		}
+		
+		function showKm6(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Km6').removeClass("display");
+		}
+		
+		function showKm2(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Km2').removeClass("display");
+		}
+		
+		function showSaf(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Her').addClass("display");
+			$('#Del').addClass("display");
+			$('#Saf').removeClass("display");
+		}
+		
+		function showPls(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Her').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Del').addClass("display");
+			$('#Pls').removeClass("display");
+		}
+		
+		function showPar(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Her').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Del').addClass("display");
+			$('#Par').removeClass("display");
+		}
+		
+		function showHer(){
+			$('#Vic').addClass("display");
+			$('#San').addClass("display");
+			$('#Sal').addClass("display");
+			$('#Ncg').addClass("display");
+			$('#Las').addClass("display");
+			$('#Flo').addClass("display");
+			$('#Elv').addClass("display");
+			$('#Dur').addClass("display");
+			$('#Sen').addClass("display");
+			$('#Cam').addClass("display");
+			$('#Pls').addClass("display");
+			$('#Par').addClass("display");
+			$('#Km2').addClass("display");
+			$('#Km6').addClass("display");
+			$('#Saf').addClass("display");
+			$('#Del').addClass("display");
+			$('#Her').removeClass("display");
+		}
+		
+		
+		//falta remover y agregar las variables a cada funcion de las show();
+		//y a las funciones byeMarker hacer lo smismo;
+		
+		
+		
+		
+		function procesaClick() {
+			infoSuc();
+			showVic();
+		}
+		
+		function procesaClick2() {
+			infoSuc();
+			showSen();
+						
+		}
+		
+		function procesaClick3() {
+			infoSuc();
+			showSan();
+		}
+		
+		function procesaClick4() {
+			infoSuc();
+			showSal();
+		}
+		
+		function procesaClick5() {
+			infoSuc();
+			showNcg();
+		}
+		
+		function procesaClick6() {
+			infoSuc();
+			showLas();
+		}
+		
+		function procesaClick7() {
+			infoSuc();
+			showFlo();			
+		}
+		
+		function procesaClick8() {
+			infoSuc();
+			showElv();
+		}
+		
+		function procesaClick9() {
+			infoSuc();
+			showDur();
+		}
+		
+		function procesaClick10() {
+			infoSuc();
+			showDel();
+		}
+		
+		function procesaClick11() {
+			infoSuc();
+			showCam();
+		}
+		
+		function procesaClick12() {
+			infoSuc();
+			showPls();
+		}
+		
+		function procesaClick13() {
+			infoSuc();
+			showKm6();
+		}
+		
+		function procesaClick14() {
+			infoSuc();
+			showKm2();
+		}
+		
+		function procesaClick15() {
+			infoSuc();
+			showSaf();
+		}
+		
+		function procesaClick16() {
+			infoSuc();
+			showPar();
+		}
+		
+		function procesaClick17() {
+			infoSuc();
+			showHer();
+		}
+	
+		$( "#cerrar" ).click(function() {
+			$( ".info_suc" ).hide( "fast" );
+		});
+		
+      }
+      
+      //carga el mapa
+      google.maps.event.addDomListener(window, 'load', initialize);
+      	    </script>
+		<script src='js/vendor/bootstrap.min.js'></script>
+<script src='js/main.js'></script>
+<script src='js/jquery.nivo.slider.pack.js'></script>
+<script src='js/hotspot.js'></script>
+<script src='js/fs.wallpaper.js'></script>
+<script src='js/jquery.quovolver.js'></script>
+
+    </head>
+    <body class="BGSuc" onload="initialize()">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">Su navegadore es<strong>anticuado</strong>. Por favor <a href="http://browsehappy.com/">actualice el navegador</a> para tener una mejor experiencia del sitio.</p>
+        <![endif]-->
+		
+				<header>
+			<div id="menuBG">
+				<div class="container">
+					<div class="row">
+						<div id="logo" class="col-md-3">
+							<a href="index.html"><img src="img/logo.png" alt="Pizzería La Sierra" /></a>
+						</div>
+						<nav id="menu" class="col-md-9 text-right">
+							<ul class="list-inline">
+								<li><a href="index.html">Inicio</a></li>
+								<li><a href="top10.html">Men&uacute; Top 10</a></li>
+								<li class='current'><a class='current' href="sucursales.html">Sucursales</a></li>
+								<li><a href="">La Sierra Kids</a></li>
+								<li><a href="contacto.html">Contacto</a></li>
+								<li><a href="sucursal.html">Contacto</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<div class="container contenedor">
+		    <div class="row">
+		      <div class="col-md-3 titulo"><h1 class="titulo_suc">Ubíca tu <br/> sucursal</h1></div>
+		      <div class="col-md-3 texto_suc">ackground: rgba(255, 255, 255, 0.9);-webkit-border-radius: 10px; -moz-border-radius: 10px;
+		      </div>
+		      <div class="col-md-3">
+		    	  <ul class="estados">
+		    	  	<li >Chihuahua</li>
+		    	  	<li>Coahuila</li>
+		    	  	<li>Sonora</li>
+		    	  	<li>Durango</li>
+		    	  </ul>
+		      </div>
+		      <div class="col-md-3 img_suc"><img src="img/sucImg.png" alt="Imágen_Sucursal" /></div>
+		    </div>
+			<div class="container mapa">
+				<div id="tabEstados">
+					<ul class="nav nav-tabs botones">
+						<li id="TodasSucs" class="active"><a href="#mapa" data-toggle="tab">Todas nuestras sucursales</a></li>
+						<li id="Chihuahua"><a data-toggle="tab">Chihuahua</a></li>
+						<li id="Sonora"><a data-toggle="tab">Sonora</a></li>
+						<li id="Durango"><a data-toggle="tab">Durango</a></li>
+						<li id="Coahuila"><a data-toggle="tab">Coahuila</a></li>
+					</ul>	
+						<div id="Chihua">
+							<ul class="row btn Chihua">
+								<li class="col-md-2" id="vicBtn">
+									<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Victoria
+									</button>
+								</li>
+						  		<li class="col-md-2" id="senBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Sendero
+									</button>
+								</li>
+						  		<li class="col-md-2" id="sanBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>San Ángel
+									</button>
+						  		</li>
+						  		<li class="col-md-2" id="ncgBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Casas Grandes
+									</button>
+								</li>
+								<li class="col-md-2" id="km6Btn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Km 6
+									</button>
+								</li>
+								<li class="col-md-2" id="camBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Campo 101
+									</button>
+								</li>
+								<li class="col-md-2" id="parBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Parral
+									</button>
+								</li>
+								<li class="col-md-2" id="plsBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Sierra Madre
+									</button>
+								</li>
+								<li class="col-md-2" id="safBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>San Felipe
+									</button>
+								</li>
+								<li class="col-md-2" id="delBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Delicias
+									</button>
+								</li>
+								<li class="col-md-2" id="elvBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>El Valle
+									</button>
+								</li>
+								<li class="col-md-2" id="km2Btn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Km 27
+									</button>
+								</li>
+								<li class="col-md-2" id="floBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Florencia
+									</button>
+								</li>
+								<li class="col-md-2" id="lasBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Las Torres
+									</button>
+								</li>
+						  	</ul>
+					  	</div>
+					  	<div id="Sono">					
+							<ul class="row btn Sono">	
+						  		<li class="col-md-4" id="herBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Hermosillo
+									</button>
+								</li>
+						  	</ul>
+						</div>				
+						<div id="Coahu">
+							<ul class="row btn Coahu">
+						  		<li class="col-md-6" id="salBtn">
+						  			<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Saltillo
+									</button>
+								</li>
+						  	</ul>
+						</div>
+					  	<div id="Duran">
+					  		<ul class="row btn Duran">
+					  			<li class="col-md-12" id="durBtn">
+					  				<button type="button" class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-map-marker"></span>Durango
+									</button>
+								</li>
+					  		</ul>
+					  	</div>
+				</div>					
+				<div class="row">
+					<div class="col-md-12" id="mapa">
+						<div class="info_suc">
+							<div id="cerrar"><span class="glyphicon glyphicon-remove-circle"></div>
+							<div class="todasSucs">
+								<div id="Vic" class="display chihuahua">
+									<h2>Sucursal Victoria</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-victoria.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Calle Benito Juárez No 3115, Plaza Victoria Local 25, 26, 27
+									<br/> Col. Centro
+									<br/>Chihuahua, Chihuahua.
+									<br/><strong>Teléfonos</strong>
+									<br/>(614)4103800
+									<br/>(614)4103814
+									<br/><strong>E-mail</strong>
+									<br/>lasierravictoria@telmexmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Domingo 8:00am a 10:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+			 					</div>
+								<div id="Sen" class="display chihuahua">
+									<h2>Sucursal Sendero</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sendero.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Av. Francisco Villareal Torres No. 2050-A Int sub G, Plaza Comercial Sendero
+									<br/> Col. Valle del Sol						
+									<br/>Cd. Juárez, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>(656)66621987 
+									<br/><strong>E-mail</strong>
+									<br/>lasierrajuarez@gmail.com
+									<br /><strong>Horario</strong>
+									<br/>Domingo a Miércoles 8:00am a 10:00pm
+									<br/>Jueves a Sábado 7:30am a 10:30pm</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="San" class="display chihuahua">
+									<h2>Sucursal San Ángel</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-sanAngel.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Perif. de la Juventud 4101-2, Plaza San Angel
+									<br/> Col. Las Misiones
+									<br/>Chihuahua, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>(614) 4262500
+									<br/><strong>E-mail</strong>
+									<br/>compraspodelsa@gmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Miércoles 7:00am a 9:00pm
+									<br/>Jueves a Domingo 7:00am a 10:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Del" class="display chihuahua">
+									<h2>Sucursal Delicias</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-delicias.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Av. Ferrocarril Oriente #301
+									<br/> Col. Centro
+									<br/>Delicias, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>(639) 4700209
+									<br/><strong>E-mail</strong>
+									<br/>pizzeriaevandy@gmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Domingo 8:00am a 10:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Cam" class="display chihuahua">
+									<h2>Sucursal Campo 101</h2>
+									<img id="Tienda" class="img-responsive logo" src="../img/logo.png" />
+									<p><strong>Dirección</strong>
+									<br/>Campo 101, Carr a Cuauhtémoc - Bachiniva
+									<br/> Col. Vianna
+									<br/>Cuauhtémoc, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>(625)5841079
+									<br/><strong>E-mail</strong>
+									<br/>lasierra101@pizzerialasierra.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Sábado 7:30am a 8:30pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Km6" class="display chihuahua">
+									<h2>Sucursal Kilometro 6</h2>
+									<img id="Tienda" class="img-responsive logo" src="../img/logo.png" />
+									<p><strong>Dirección</strong>
+									<br/>Km. 6 Carr a Alvaro Obregón s/n
+									<br/>Cuauhtémoc, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>(625)5877125 
+									<br/><strong>E-mail</strong>
+									<br/>info@pizzerialasierra.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Sábado 7:00am a 8:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Km2" class="display chihuahua">
+									<h2>Sucursal Kilometro 27</h2>
+									<img id="Tienda" class="img-responsive logo" src="../img/logo.png" />
+									<p><strong>Dirección</strong>
+									<br/>Km 27 Carr a Álvaro Obregón s/n
+									<br/>Cuauhtémoc, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>6255786262
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Sábado 7:30am a 8:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Par" class="display chihuahua">
+									<h2>Sucursal Parral</h2>
+									<img id="Tienda" class="img-responsive logo" src="../img/logo.png" />
+									<p><strong>Dirección</strong>
+									<br/>Pedro de Lille y Dr. de Lille S/N
+									<br/>Col. Cnop
+									<br/>Parral, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>(627)5234848
+									<br/><strong>E-mail</strong>
+									<br/>fofo_pits@hotmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Domingo 6:30am a 9:30pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Pls" class="display chihuahua">
+									<h2>Sucursal Plaza Sierra</h2>
+									<img id="Tienda" class="img-responsive logo" src="../img/logo.png" />
+									<p><strong>Dirección</strong>
+									<br/>Av. 16 de Septiembre y Tlaxcala #1020, Plaza Comercial Sierra Madre
+									<br/>Col. Las Huertas
+									<br/>Cuauhtémoc, Chihuahua.
+									<br/><strong>Teléfono</strong>
+									<br/>(625)5828379 
+									<br/><strong>E-mail</strong>
+									<br/>pizzerialasierrawallmart@hotmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Domingo 8:00am a 8:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>								
+								</div>
+								<div id="Saf" class="display chihuahua">
+									<h2>Sucursal San Felipe</h2>
+									<img id="Tienda" class="img-responsive logo" src="../img/logo.png" />
+									<p><strong>Dirección</strong>
+									<br/>Blvd. Antonio Ortiz Mena No. 3506 Local 1, Plaza San Felipe 
+									<br/>Col. Angel Trias
+									<br/>Chihuahua, Chihuahua.
+									<br/><strong>Teléfonos</strong>
+									<br/>(614)4132413
+									<br/> (614)4130405
+									<br/><strong>E-mail</strong>
+									<br/>lasierravictoria@telmexmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Domingo 8:00am a 10:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Ncg" class="display chihuahua">
+									<h2>Sucursal Casas Grandes</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-ncg.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Av. Benito Juárez No 1401 Local 7 Plaza Paquime.
+									<br/>Col. Centro
+									<br/>Nuevo Casas Grandes, Chihuahua.																		<br/><strong>Teléfonos</strong>
+									<br/>(636) 6942022
+									<br/>(636) 6942345
+									<br/><strong>E-mail</strong>
+									<br/>pizzasierrancg@hotmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Domingo 7:00am a 10:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Las" class="display chihuahua">
+									<h2>Sucursal Las Torres</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-lasTorres.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Av. de las Torres No 2111 Int. 11F, Plaza Comercial Las Torres
+									<br/>Col. Lote Bravo
+									<br/>Cd. Juárez, Chihuahua.																					<br/><strong>Teléfono</strong>
+									<br/>(656) 6811966
+									<br/><strong>E-mail</strong>
+									<br/>pizzerialasierra.lastorres@hotmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Jueves 9:00am a 10:00pm
+									<br/>Viernes a Domingo 8:00am a 10:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Flo" class="display chihuahua">
+									<h2>Sucursal Florencia</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-florencia.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Av. Cristobal Colon 11520-1, Plaza Florencia
+									<br/>Complejo Industrial Chihuahua
+									<br/>Chihuahua, Chihuahua.																					<br/><strong>Teléfono</strong>
+									<br/>(614)4810202
+									<br/><strong>E-mail</strong>
+									<br/>contapodelsa@gmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Domingo 7:00am a 9:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Elv" class="display chihuahua">
+									<h2>Sucursal El Valle</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-elValle.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Blvd. El Valle S/N 
+									<br/>Col. El Valle
+									<br/>Buenaventura, Chihuahua.																				<br/><strong>Teléfono</strong>
+									<br/>(636) 6632075
+									<br/>Cel. (636) 1113590
+									<br/><strong>E-mail</strong>
+									<br/>lizlitz@hotmail.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Sábado 7:30am a 9:00pm 
+									<br/>Domingo 11:30am a 9:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Sal" class="display coahuila">
+									<h2>Sucursal Saltillo</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-saltillo.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Perif Luis Echeverria esquina con Colombia No 605 
+									<br/>Col. Latinoamericana
+									<br/>Saltillo, Coahuila.																					<br/><strong>Teléfono</strong>
+									<br/>(844)4390002
+									<br/>(844)4390006
+									<br/><strong>E-mail</strong>
+									<br/>lasierrasaltillo@pizzerialasierra.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Sábado 8:00am a 10:15pm 
+									<br/>Domingos 1:00am a 9:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Her" class="display sonora">
+									<h2>Sucursal Hermosillo</h2>
+									<img id="Tienda" class="img-responsive logo" src="../img/logo.png" />
+									<p><strong>Dirección</strong>
+									<br/>Blvd. Garcia Morales No 547-8 
+									<br/>Col. Parque industrial
+									<br/>Hermosillo, Sonora.																					<br/><strong>Teléfono</strong>
+									<br/>662 2615050
+									<br/><strong>E-mail</strong>
+									<br/>pzz_lasierrapizzashermosillo0413@hotmail.com
+									<br /><strong>Horario</strong>
+									<br/>Domingo a Jueves 7:00am a 10:00pm 
+									<br/>Viernes y Sábado 7:00am a 11:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+								<div id="Dur" class="display durango">
+									<h2>Sucursal Durango</h2>
+									<img id="Tienda" class="img-responsive" src="../img/sucursales/suc-durango.jpg" />
+									<p><strong>Dirección</strong>
+									<br/>Av 20 de Nov No 706 Pte. Casi esquina con Bruno Martínez
+									<br/>Zona Centro
+									<br/>Durango, Durango																						<br/><strong>Teléfono</strong>
+									<br/>(618) 810593 
+									<br/><strong>E-mail</strong>
+									<br/>lasierradgo@pizzerialasierra.com
+									<br /><strong>Horario</strong>
+									<br/>Lunes a Jueves 8:00am a 9:00pm 
+									<br/>Domingos 8:00am a 10:00pm
+									</p>
+									<li class="col-md-4" id="herBtn">
+							  			<button type="button" class="btn btn-default btn-lg">
+											Ver más<span class="glyphicon glyphicon-chevron-right"></span>
+										</button>
+									</li>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div id="map-canvas" class="col-md-12"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+    	
+    	<footer>
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-md-12 text-center"><img src="img/logo-footer.png" alt="Pizzería La Sierra" /></div>
+	    		</div>
+	    	</div>
+    	</footer>
+    	
+		        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
