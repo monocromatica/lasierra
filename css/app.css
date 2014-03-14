@@ -200,8 +200,14 @@ a.link_blanco:hover {
   color: #b52a31;
   text-decoration: none;
 }
+blockquote img {
+  float: left;
+  margin-right: 15px;
+  margin-top: -10px;
+}
 #quotes {
   background: #1a4521 url(../img/notebook.jpg) repeat;
+  padding-bottom: 30px;
 }
 blockquote p {
   margin-bottom: 10px;

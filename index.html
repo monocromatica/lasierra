@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <!-- @stylesheet bootstrap app chocolate nivo-slider default hotspot fs.wallpaper -->
+        <!-- @stylesheet bootstrap app chocolate nivo-slider default hotspot fs.wallpaper bxslider -->
 		
 		<!-- @reload -->
 
@@ -122,33 +122,40 @@
 		<div id="quotes">
     		<div class="container">
     			<div class="row">
-    				<div class="col-md-12">
+    				<div class="col-md-8 col-md-offset-2">
 						<blockquote>
+							<img src="http://placekitten.com/200/150" alt="" />
 						    <p>Escucha, serás sabio; el comienzo de la sabiduría es el silencio.</p>
 						    <cite>&ndash; Pitágoras</cite>
+						    
 						</blockquote>
 						
 						<blockquote>
+							<img src="http://placekitten.com/200/150" alt="" />
 						    <p>Las nubes sólo duran un momento y el Sol es para toda la vida.</p>
 						    <cite>&ndash; Rabindranath Tagore</cite>
 						</blockquote>
 						
 						<blockquote>
+							<img src="http://placekitten.com/200/150" alt="" />
 						    <p>Ofrecer amistad al que busca amor es dar pan al que se muere de sed.</p>
 						    <cite>&ndash; Gabriel García Márquez</cite>
 						</blockquote>
 						
 						<blockquote>
+							<img src="http://placekitten.com/200/150" alt="" />
 						    <p>Demasiado al Este es el Oeste.</p>
 						    <cite>&ndash; Proverbio inglés</cite>
 						</blockquote>
 						
 						<blockquote>
+							<img src="http://placekitten.com/200/150" alt="" />
 						    <p>Nada que se consiga sin pena y sin trabajo es verdaderamente valioso.</p>
 						    <cite>&ndash; Joseph Addison</cite>
 						</blockquote>
 						
 						<blockquote>
+							<img src="http://placekitten.com/200/150" alt="" />
 						    <p>El hombre honesto no teme la luz ni la oscuridad.</p>
 						    <cite>&ndash; Thomas Fuller</cite>
 						</blockquote>	    				
@@ -187,8 +194,12 @@
 				<div id="notipizza" class="row">
 					<div class="col-md-5">
 					    <h3>NotiPizza</h3>
-					    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni incidunt vel dignissimos ratione reprehenderit neque iste nesciunt dolore facere est voluptatibus veritatis ipsa qui nulla esse voluptates eos ex corporis!</p>
-					    <p>Vel aperiam facilis minima architecto id ullam sapiente debitis sunt at quam harum explicabo vero ea optio magnam pariatur mollitia amet sed cum molestias odit recusandae dolor unde? Deleniti eligendi.</p>
+					    <ul class="bxslider">
+						  <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni incidunt vel dignissimos ratione reprehenderit neque iste nesciunt dolore facere est voluptatibus veritatis ipsa qui nulla esse voluptates eos ex corporis!</p></li>
+						  <li><p>Vel aperiam facilis minima architecto id ullam sapiente debitis sunt at quam harum explicabo vero ea optio magnam pariatur mollitia amet sed cum molestias odit recusandae dolor unde? Deleniti eligendi.</p></li>
+						  <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magni expedita et amet cumque nisi quis earum repellat voluptatem provident!</p></li>
+						  <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quaerat deleniti nemo veniam harum perferendis illo rerum et corporis itaque minima ex cumque officia ipsa sapiente asperiores nisi id modi?</p></li>
+						</ul>
 					</div>
 				</div>
 			</div><!-- /.container -->
@@ -209,7 +220,7 @@
     	
     	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-		<!-- @javascript bootstrap.min main jquery.nivo.slider.pack hotspot fs.wallpaper jquery.quovolver -->
+		<!-- @javascript bootstrap.min main jquery.nivo.slider.pack hotspot fs.wallpaper jquery.quovolver bxslider.min -->
 		<script type="text/javascript">
 		    	$(window).load(function() {
 		    	    $('#slider').nivoSlider({
@@ -258,6 +269,11 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 			    $('blockquote').quovolver();
+			});
+		</script>
+		<script>
+			$(document).ready(function(){
+			  $('.bxslider').bxSlider();
 			});
 		</script>
 		<!-- @include _analytics.html -->
