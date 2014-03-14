@@ -67,8 +67,7 @@
 				</div>
 			</div>
 		</header>
-		
-    	<div>
+		<div>
     		<div id="verduras">
 	    		<img src="img/verduras.png" alt="verduras" width="480" height="1053">
     		</div>
@@ -76,38 +75,28 @@
     			<div class="row">
     				<div id="formulario" class="col-md-8 col-md-offset-4">
 		    			<div id="contacInfo">
-						    <div class="row">
+							<div class="row">
 						    	<h1 class="titulo" style="margin-left:20px;">Contactanos</h1>
-						    	<div class="col-md-6">
-						    		<div class="row">
-						    			<div class="col-md-2">
-						    				<img src="img/mapMarker.png" alt="mapMarker" width="17" height="24">
-						    			</div>
-						    			<div class="col-md-10" class="infor">
-						    				<h3 class="tituloS">Matriz</h3>
-						    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam repudiandae tenetur illo culpa voluptatum laboriosam.</p>
-						    				<a href="" class="btnRojo">ver mapa</a>
-						    			</div>
-						    		</div>
-						    		<br />
-						    		<br />
-						    		<div class="row">
-						    			<div class="col-md-2">
-						    				<img src="img/telefono.png" alt="telefono" width="21" height="29">
-						    			</div>
-						    			<div class="col-md-10">
-						    				<h3 class="tituloS">Tel&eacute;fonos</h3>
-						    				<p>01 800 1234 5678 <br />+52 625 1234 5678 <br />+52 625 1234 5678 <br />+52 625 1234 5678</p>
-						    			</div>
-						    		</div>
-						    	</div><!-- /.col-md-6 -->
-						    	<div class="col-md-6">
-							    	<div class="row">
-							    		<div class="col-md-2">
-							    			<img src="img/emailC.png" alt="emailC" width="28" height="20">
-							    		</div>
-							    		<div class="col-md-10">
-							    			<h3 class="tituloS">Email</h3>
+						    	<div id="info_content" class="row col-md-12">
+									<div id="Matriz" class="col-md-4">
+			    						<div class="col-md-2">
+											<img src="img/mapMarker.png" alt="mapMarker" width="17" height="24">
+										</div>
+										<h3 class="tituloS">Matriz</h3>
+										<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam repudiandae tenetur illo culpa voluptatum laboriosam.</p>
+									</div>
+									<div id="telefono_sucursal" class="col-md-4">
+										<div class="col-md-2">
+											<img src="img/telefono.png" alt="telefono" width="21" height="29">
+										</div>
+										<h3 class="tituloS">Tel&eacute;fonos</h3>
+										<p class="text-center">01 800 1234 5678 <br />  +52 625 1234 5678 <br />  +52 625 1234 5678</p>
+									</div>
+									<div id="correo_sucursal" class="col-md-4">
+										<div class="col-md-2">
+											<img src="img/emailC.png" alt="emailC" style="margin:0 0 0 -13px;" >
+										</div>
+										<h3 class="tituloS">Email</h3>
 							    			<p>
 							    				<strong>Gerencia</strong>
 							    				<br />
@@ -123,12 +112,71 @@
 							    				<br />
 							    				<a href="">ventas@pizzerialasierra.com</a>
 							    			</p>
-							    		</div>
-							    	</div>
-						    	</div><!-- /.col-md-6 -->
-						    </div><!-- .row -->
-						</div><!-- /#contactInfo -->
-						<!--
+										</div>
+									</div><!-- /.col-md-6 -->
+								</div><!-- .row -->
+							</div><!-- /#contactInfo -->
+						<!-- #formCont -->
+	  	  	  	  	  	  	<form role="form" method="post" action="formulario.php" class="row">
+	  	  	  	  	  	  	  <div class="form-group col-md-6">
+	  	  	  	  	  	  	    <label for="nombre">Nombre</label>
+	  	  	  	  	  	  	    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"/>
+	  	  	  	  	  	  	  </div>
+	  	  	  	  	  	  	  <div class="form-group col-md-6">
+	  	  	  	  	  	  	    <label for="ciudad">Ciudad</label>
+	  	  	  	  	  	  	    <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="ciudad"/>
+	  	  	  	  	  	  	  </div>
+	  	  	  	  	  	  	  <div class="form-group col-md-6">
+	  	  	  	  	  	  	    <label for="email">Email</label>
+	  	  	  	  	  	  	    <input type="email" class="form-control" id="email" name="email" placeholder="email"/>
+	  	  	  	  	  	  	  </div>
+	  	  	  	  	  	  	  <div class="form-group col-md-6">
+	  	  	  	  	  	  	    <label for="telefono">Teléfono</label>
+	  	  	  	  	  	  	    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="telefono"/>
+	  	  	  	  	  	  	  </div>
+	  	  	  	  	  	  	  <div class="form-group col-md-12">
+	  	  	  	  	  	  	    <label for="mensaje">Mensaje</label>
+	  	  	  	  	  	  	    <textarea  type="text" class="form-control" id="mensaje" name="mensaje" placeholder="deja tu mensaje" rows="5" ></textarea>
+	  	  	  	  	  	  	  </div>
+	  	  	  	  	  	  	
+	  	  	  	  	  	  	  	<div class="col-md-12">
+	  	  	  	  	  	  	  		<button type="submit" class="btnRojo">enviar <span>&gt;</span></button>
+	  	  	  	  	  	  	  	</div>
+	  	  	  	  	  	  	</form>
+	  	  	  	  	</div><!-- /#formulario -->
+	  	  	    </div><!-- /.row -->
+			</div><!-- .container -->
+		</div>
+    	
+    	
+    	
+    	
+    	
+		    	<footer>
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-md-12 text-center"><img src="img/logo-footer.png" alt="Pizzería La Sierra" /></div>
+	    		</div>
+	    	</div>
+    	</footer>
+    	
+    	
+    	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+		<script src='js/vendor/bootstrap.min.js'></script>
+<script src='js/main.js'></script>
+<script src='js/fs.wallpaper.js'></script>
+
+		        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
+
+<!--
 <div class="formCont">
 						    	<form role="form" method="post" action="formulario.php" class="row">
 						    		<div class="col-md-12">
@@ -159,64 +207,4 @@
 						    	</form>
 						    </div>
 						</div>
---><!-- #formCont -->
-  	  	  	  	  	  	<form role="form" method="post" action="formulario.php" class="row">
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="nombre">Nombre</label>
-  	  	  	  	  	  	    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="ciudad">Ciudad</label>
-  	  	  	  	  	  	    <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="ciudad"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="email">Email</label>
-  	  	  	  	  	  	    <input type="email" class="form-control" id="email" name="email" placeholder="email"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="telefono">Teléfono</label>
-  	  	  	  	  	  	    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="telefono"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-12">
-  	  	  	  	  	  	    <label for="mensaje">Mensaje</label>
-  	  	  	  	  	  	    <textarea  type="text" class="form-control" id="mensaje" name="mensaje" placeholder="deja tu mensaje" rows="5" ></textarea>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	
-  	  	  	  	  	  	  	<div class="col-md-12">
-  	  	  	  	  	  	  		<button type="submit" class="btnRojo">enviar <span>&gt;</span></button>
-  	  	  	  	  	  	  	</div>
-  	  	  	  	  	  	</form>
-  	  	  	  	  	  	
-  	  	  	  	  	  	
-    				</div><!-- /#formulario -->
-    			</div><!-- /.row -->
-    		</div><!-- .container -->
-    	</div>
-    	
-    	
-    	
-    	
-    	
-		    	<footer>
-	    	<div class="container">
-	    		<div class="row">
-	    			<div class="col-md-12 text-center"><img src="img/logo-footer.png" alt="Pizzería La Sierra" /></div>
-	    		</div>
-	    	</div>
-    	</footer>
-    	
-    	
-    	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-		<script src='js/vendor/bootstrap.min.js'></script>
-<script src='js/main.js'></script>
-<script src='js/fs.wallpaper.js'></script>
-
-		        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
-</html>
+-->
