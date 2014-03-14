@@ -9,12 +9,12 @@
         <title>Pizzería La Sierra -  La Pizza Menonita</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
+        <!-- @javascript bootstrap.min main fs.wallpaper -->
         <!-- @stylesheet bootstrap app chocolate fs.wallpaper -->
+        <link rel="stylesheet" href="css/venobox.css"/>
 		
 		<!-- @reload -->
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body id="contBG">
         <!--[if lt IE 7]>
@@ -23,131 +23,62 @@
 
 		
 		<!-- @include _header.html -->
-		
-    	<div>
-    		<div id="verduras">
-	    		<img src="img/verduras.png" alt="verduras" width="480" height="1053">
-    		</div>
+		<div id="fb-root"></div>
+		<script>
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+    	
     		<div class="container">
     			<div class="row">
-    				<div id="formulario" class="col-md-8 col-md-offset-4">
-		    			<div id="contacInfo">
-						    <div class="row">
-						    	<h1 class="titulo" style="margin-left:20px;">Contactanos</h1>
-						    	<div class="col-md-6">
-						    		<div class="row">
-						    			<div class="col-md-2">
-						    				<img src="img/mapMarker.png" alt="mapMarker" width="17" height="24">
-						    			</div>
-						    			<div class="col-md-10" class="infor">
-						    				<h3 class="tituloS">Matriz</h3>
-						    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam repudiandae tenetur illo culpa voluptatum laboriosam.</p>
-						    				<a href="" class="btnRojo">ver mapa</a>
-						    			</div>
-						    		</div>
-						    		<br />
-						    		<br />
-						    		<div class="row">
-						    			<div class="col-md-2">
-						    				<img src="img/telefono.png" alt="telefono" width="21" height="29">
-						    			</div>
-						    			<div class="col-md-10">
-						    				<h3 class="tituloS">Tel&eacute;fonos</h3>
-						    				<p>01 800 1234 5678 <br />+52 625 1234 5678 <br />+52 625 1234 5678 <br />+52 625 1234 5678</p>
-						    			</div>
-						    		</div>
-						    	</div><!-- /.col-md-6 -->
-						    	<div class="col-md-6">
-							    	<div class="row">
-							    		<div class="col-md-2">
-							    			<img src="img/emailC.png" alt="emailC" width="28" height="20">
-							    		</div>
-							    		<div class="col-md-10">
-							    			<h3 class="tituloS">Email</h3>
-							    			<p>
-							    				<strong>Gerencia</strong>
-							    				<br />
-							    				<a href="">gerencia@pizzerialasierra.com</a>
-							    			</p>
-							    			<p>
-							    				<strong>Marketing</strong>
-							    				<br />
-							    				<a href="">mkt@pizzerialasierra.com</a>
-							    			</p>
-							    			<p>
-							    				<strong>Ventas</strong>
-							    				<br />
-							    				<a href="">ventas@pizzerialasierra.com</a>
-							    			</p>
-							    		</div>
-							    	</div>
-						    	</div><!-- /.col-md-6 -->
-						    </div><!-- .row -->
-						</div><!-- /#contactInfo -->
-						<!--
-<div class="formCont">
-						    	<form role="form" method="post" action="formulario.php" class="row">
-						    		<div class="col-md-12">
-						    			<br />
-						    			<h1 class="tituloS">Formulario</h1>
-						    		</div>
-						    		<div class="form-group col-md-6">
-						    		  	
-						    		    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Coloca tu nombre" required >
-						    		    <span id="messages"></span>
-						    		  </div>
-						    		  <div class="form-group col-md-6">
-						    		    <input type="email" class="form-control testBox" name="email" id="email" placeholder="Coloca tu email" required >
-						    		  </div>
-						    		  <div class="form-group col-md-6">
-						    		    <input type="text" class="form-control testBox" name="telephone" id="telephone" placeholder="Coloca tu teléfono">
-						    		  </div>
-									  <div class="form-group col-md-6">
-						    		    <input type="text" class="form-control testBox" name="ciudad" id="ciudad" placeholder="Coloca tu ciudad">
-						    		  </div>
-						    		  <div class="form-group col-md-12">
-						    		    <textarea  type="text" class="form-control testBox" name="comments" id="comments" placeholder="Déjanos tu mensaje" rows="5" required ></textarea>
-						    		    <button type="submit" value="enviar" class="btnRojo">enviar</button>
-						    		</div>							
-						    		
-						    		
-						    		<br />						
-						    	</form>
-						    </div>
-						</div>
---><!-- #formCont -->
-  	  	  	  	  	  	<form role="form" method="post" action="formulario.php" class="row">
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="nombre">Nombre</label>
-  	  	  	  	  	  	    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="ciudad">Ciudad</label>
-  	  	  	  	  	  	    <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="ciudad"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="email">Email</label>
-  	  	  	  	  	  	    <input type="email" class="form-control" id="email" name="email" placeholder="email"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-6">
-  	  	  	  	  	  	    <label for="telefono">Teléfono</label>
-  	  	  	  	  	  	    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="telefono"/>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	  <div class="form-group col-md-12">
-  	  	  	  	  	  	    <label for="mensaje">Mensaje</label>
-  	  	  	  	  	  	    <textarea  type="text" class="form-control" id="mensaje" name="mensaje" placeholder="deja tu mensaje" rows="5" ></textarea>
-  	  	  	  	  	  	  </div>
-  	  	  	  	  	  	
-  	  	  	  	  	  	  	<div class="col-md-12">
-  	  	  	  	  	  	  		<button type="submit" class="btnRojo">enviar <span>&gt;</span></button>
-  	  	  	  	  	  	  	</div>
-  	  	  	  	  	  	</form>
-  	  	  	  	  	  	
-  	  	  	  	  	  	
-    				</div><!-- /#formulario -->
-    			</div><!-- /.row -->
-    		</div><!-- .container -->
-    	</div>
+    				<div id="contenedor_sucursal" class="col-md-7">
+	    				<h1 class="titulo" style="margin-left:20px;">Casas Grandes</h1>
+	    				<img id="img_sucursal" src="ninguna.jpg" alt="Sucursal"/>
+	    				<div id="info_sucursal" class="row">
+	    					<div id="domicilio_sucursal" class="col-md-4">
+			    				<div class="col-md-2">
+									<img src="img/mapMarker.png" alt="mapMarker" width="17" height="24">
+								</div>
+								<h3 class="tituloS">Domicilio</h3>
+								<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam repudiandae tenetur illo culpa voluptatum laboriosam.</p>
+		    				</div>
+		    				<div id="telefono_sucursal" class="col-md-4">
+								<div class="col-md-2">
+									<img src="img/telefono.png" alt="telefono" width="21" height="29">
+								</div>
+								<h3 class="tituloS">Tel&eacute;fonos</h3>
+								<p class="text-center">01 800 1234 5678 <br />  +52 625 1234 5678 <br />  +52 625 1234 5678</p>
+
+		    				</div>
+		    				<div id="correo_sucursal" class="col-md-4">
+								<div class="col-md-2">
+									<img src="img/emailC.png" alt="emailC" >
+								</div>
+								<h3 class="tituloS" id="mail">Email</h3>
+								<p><strong>Contactanos</strong>
+								<br /><a href="">gerencia@pizzerialasierra.com</a>
+								</p>
+		    				</div>
+		    				<div><br /></div>
+		    				<div id="promociones" class="row col-md-7">
+			    				<h2 id="promo">Promociones</h2>
+			    			</div>
+								<div id="lightbox" class="row col-md-7">
+				    				<a class="venobox col-md-4" data-gall="myGallery" href="http://placekitten.com/500/500"><img src="http://placekitten.com/100/100" /></a>
+									<a class="venobox col-md-4" data-gall="myGallery" href="http://placekitten.com/500/500"><img src="http://placekitten.com/100/100" /></a>
+									<a class="venobox col-md-4" data-gall="myGallery" href="http://placekitten.com/500/500"><img src="http://placekitten.com/100/100" /></a>
+								</div>
+								<div class="fb-like-box" data-href="https://www.facebook.com/pages/Pizzeria-La-Sierra/195695587153883?fref=ts" data-width="290" data-height="200" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+		    				</div>
+	    				</div>
+	    			</div>
+   		    	</div>
+   			</div>
     	
     	
     	
@@ -157,7 +88,28 @@
     	
     	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-		<!-- @javascript bootstrap.min main fs.wallpaper -->
+		<script type="text/javascript" src="js/venobox.min.js"></script>
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				/* default settings */
+				$('.venobox').venobox(); 
+				/* open content with custom settings */
+				$('.venobox_custom').venobox({
+					framewidth: '300px',
+					frameheight: '250px',
+					border: '6px',
+					bordercolor: '#ba7c36',
+					numeratio: true
+				});
+
+				/* auto-open #firstlink on page load */
+				$("#firstlink").venobox().trigger('click');
+			});
+		</script>
+
+
+		
 
 		<!-- @include _analytics.html -->
     </body>
