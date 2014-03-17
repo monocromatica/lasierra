@@ -398,6 +398,16 @@ blockquote {
   -moz-border-radius: 20px;
   border-radius: 20px;
   padding: 10px;
+  float: left;
+  display: inline;
+}
+#redSocial h2 {
+  margin: 20px;
+}
+#mc_embed_signup {
+  padding: -150px 0 0 30px;
+  font: 14px Helvetica, Arial, sans-serif;
+  float: right;
 }
 /*---------------------------------------
               nosotros
