@@ -16,17 +16,15 @@ if(isset($_POST['email'])) {
 	}
 	
 	// validation expected data exists
-	if(!isset($_POST['nombre']) ||
-	if(!isset($_POST['ciudad']) ||
+	if(!isset($_POST['first_name']) ||
 		!isset($_POST['email']) ||
-		!isset($_POST['telefono']) ||
-		!isset($_POST['mensaje'])) {
+		!isset($_POST['telephone']) ||
+		!isset($_POST['comments'])) {
 		died('Lo sentimos, pero hay errores en el formulario que envi&oacute;.');		
 	}
 	
-	$first_name = $_POST['nombre']; // required
+	$first_name = $_POST['first_name']; // required
 	$email_from = $_POST['email']; // required
-	$ciudad = $_POST['ciudad']; // not required
 	$telephone = $_POST['telephone']; // not required
 	$comments = $_POST['comments']; // required
 	
@@ -53,7 +51,6 @@ if(isset($_POST['email'])) {
 	}
 	
 	$email_message .= "Nombre: ".clean_string($first_name)."\n";
-	$email_message .= "Ciudad: ".clean_string($ciudad)."\n";
 	$email_message .= "Email: ".clean_string($email_from)."\n";
 	$email_message .= "Teléfono: ".clean_string($telephone)."\n";
 	$email_message .= "Comentarios: ".clean_string($comments)."\n";

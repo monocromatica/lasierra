@@ -14,30 +14,6 @@
 <link rel='stylesheet' href='css/app.css'>
 <link rel='stylesheet' href='fonts/chocolate.css'>
 <link rel='stylesheet' href='css/fs.wallpaper.css'>
-		
-		
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 		<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -113,34 +89,35 @@
 									</div><!-- /.col-md-6 -->
 								</div><!-- .row -->
 							</div><!-- /#contactInfo -->
-						<!-- #formCont -->
-	  	  	  	  	  	  	<form role="form" method="post" action="formulario.php" class="row">
-	  	  	  	  	  	  	  <div class="form-group col-md-6">
-	  	  	  	  	  	  	    <label for="nombre">Nombre</label>
-	  	  	  	  	  	  	    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"/>
-	  	  	  	  	  	  	  </div>
-	  	  	  	  	  	  	  <div class="form-group col-md-6">
-	  	  	  	  	  	  	    <label for="ciudad">Ciudad</label>
-	  	  	  	  	  	  	    <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="ciudad"/>
-	  	  	  	  	  	  	  </div>
-	  	  	  	  	  	  	  <div class="form-group col-md-6">
-	  	  	  	  	  	  	    <label for="email">Email</label>
-	  	  	  	  	  	  	    <input type="email" class="form-control" id="email" name="email" placeholder="email"/>
-	  	  	  	  	  	  	  </div>
-	  	  	  	  	  	  	  <div class="form-group col-md-6">
-	  	  	  	  	  	  	    <label for="telefono">Teléfono</label>
-	  	  	  	  	  	  	    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="telefono"/>
-	  	  	  	  	  	  	  </div>
-	  	  	  	  	  	  	  <div class="form-group col-md-12">
-	  	  	  	  	  	  	    <label for="mensaje">Mensaje</label>
-	  	  	  	  	  	  	    <textarea  type="text" class="form-control" id="mensaje" name="mensaje" placeholder="deja tu mensaje" rows="5" ></textarea>
-	  	  	  	  	  	  	  </div>
-	  	  	  	  	  	  	
-	  	  	  	  	  	  	  	<div class="col-md-12">
-	  	  	  	  	  	  	  		<button type="submit" class="btnRojo">enviar <span>&gt;</span></button>
-	  	  	  	  	  	  	  	</div>
-	  	  	  	  	  	  	</form>
-	  	  	  	  	  	  <div class="row">
+							<hr />
+							<div id="formCont" class="col-md-12">
+							    <h2>Formulario de contacto</h2>
+							    <div class="formCont">
+							    	<form role="form" method="post" action="formulario.php" class="pure-form">
+							    		<div class="form-group">
+							    		  	<label for="first_name">Nombre</label>
+							    		    <input type="text" class="form-control testBox" name="first_name" id="first_name" placeholder="Coloca tu nombre" required >
+							    		    <span id="messages"></span>
+							    		  </div>
+							    		  <div class="form-group">
+							    		  	<label for="email">Email</label>
+							    		    <input type="email" class="form-control testBox" name="email" id="email" placeholder="Coloca tu email" required >
+							    		  </div>
+							    		  <div class="form-group">
+							    		  	<label for="telephone">Tel&eacute;fono</label>
+							    		    <input type="text" class="form-control testBox" name="telephone" id="telephone" placeholder="Coloca tu teléfono">
+							    		  </div>
+							    		  <div class="form-group">
+							    		  	<label for="comments">Comentarios</label>
+							    		    <textarea  type="text" class="form-control testBox" name="comments" id="comments" placeholder="Déjanos tu mensaje" rows="5" required ></textarea>
+							    		</div>							
+							    		
+							    		<button type="submit" value="enviar" class="btnRojo">enviar <span>&gt;</span></button>						
+							    	</form>
+							    </div>
+							</div><!-- #formCont -->
+							<hr />
+							<div class="row">
 		  	  	  	  	  	  <div id="redSocial" class="col-md-12">
 			  	  	  	  	  	  <h2 class="tituloS">Siguenos en</h2>
 			  	  	  	  	  	  <div id="redesSociales col-md-8">

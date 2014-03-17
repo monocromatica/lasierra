@@ -9,6 +9,7 @@ h2,
 h3,
 h4 {
   font-family: chocolate_calienteregular, arial;
+  color: #b52a31;
 }
 header {
   position: fixed;
@@ -368,6 +369,20 @@ blockquote {
   color: white;
   background: darkent(#b52a31, 5%);
   text-decoration: none;
+}
+#complementos div.col-md-3 {
+  margin-bottom: 25px;
+}
+#complementos div.col-md-3 img:hover {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
 }
 /*--------------------------------------
 				contacto
