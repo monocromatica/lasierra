@@ -452,6 +452,43 @@ blockquote {
 /*---------------------------------------
               franquicias
 ---------------------------------------*/
+#descargar {
+  margin: 0 50%;
+}
+#modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 10000;
+}
+.remover {
+  display: none;
+}
+#paraDescargar {
+  margin: 15% 40%;
+  background-color: #eeeeee;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+#paraDescargar h3 {
+  margin: 20px;
+}
+#paraDescargar input {
+  width: 280px;
+  height: 50px;
+  margin: 0px 15px 20px 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#paraDescargar span {
+  float: right;
+}
 /*---------------------------------------
               sucursal
 ---------------------------------------*/
