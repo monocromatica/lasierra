@@ -47,37 +47,52 @@
 					<h1 class="titulo">Franquicias</h1>
 				</div>
 				<div class="col-md-8">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolor labore optio beatae ab ea delectus voluptatem modi corporis praesentium ipsam facere libero non deserunt soluta consequatur perferendis et earum inventore error! Harum deleniti at suscipit blanditiis excepturi sint fuga laborum doloremque. Corporis est amet reiciendis accusantium velit nisi inventore!</p>
+					<p>Las franquicias han probado ser, el metódo y esquema mas seguro para establecer un negocio. Estudios reales y confiables, nos indican que el 95% de los negocios independientes fracasan en los primeros 5 años de su existencia y de hecho, la gran mayoría de estos nunca llegan a ser rentables, en nuestro segmento, encontramos riesgos en forma individual, por el desconocimiento total como negocio y en cambio en el esquema de franquicias, el 95% de las franquicias en general de nivel profesional crecen y se consolidan, son negocios estables que arrojan grandes utilidades y grandes satisfacciones profesionales.</p>
+					<p>Al adquirir una franquicia <strong> PIZZERÍA LA SIERRA Thiessen&#174;</strong>, los inversionistas reciben una marca de prestigio, una operatividad resuelta y una cobertura mercadológica.</p>
 					
 					<hr />
 					<div class="row">
 						<div class="col-md-6">
-							<h2 class="tituloS">&iquest;Porque nosotros?</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae minus delectus velit esse nemo necessitatibus aliquam nihil laudantium blanditiis enim libero provident sit. Iusto quisquam voluptates vitae sunt omnis harum sapiente placeat reiciendis at dicta temporibus neque fugit eaque sequi velit asperiores rem! </p>
-							<p><strong>&iquest;Porque me conviene una franquicia?</strong></p>
-							<ul>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-							</ul>
+							<h3 class="tituloS">&iquest;Por qu&eacute; me conviene una franquicia?</h3>
+								<ul>
+									<li>Desarrollamos un sabor &uacute;nico y original, el de las pizzas estilo &quot;Menonita&quot;.</li>
+									<li>Contamos con un programa integral de servicios complementarios.</li>
+									<li>Tenemos manuales de apoyo Operativo y Administrativo.</li>
+									<li>Tenemos una presencia definida en el mercado.</li>
+									<li>Contamos con una imágen corporativa que le de confianza al cliente.</li>
+									<li>Tenemos un avanzado Sistema Administrativo de apoyo y un soporte On Line.</li>
+								</ul>
 						</div>
 						<div class="col-md-6">
-							<h2 class="tituloS">&iquest;Que nos hace diferentes?</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore voluptates adipisci amet enim quibusdam eius velit error voluptatibus rerum tempora fugit perspiciatis similique facere minima optio illum sit tempore ab dolorem voluptatum. Vel voluptate ad blanditiis accusamus in aspernatur totam. Eveniet eaque explicabo nam vero eligendi earum quisquam placeat quae!</p>
-							<p><strong>&iquest;Como obtener una franquicia?</strong></p>
-							<ol>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-								<li>punto de fraquicia</li>
-							</ol>
+							<ul style="padding-top:25px;">
+								<li>Publicidad corporativa para tener un impacto en el mercado.</li>
+								<li>Registros administrativos confiables.</li>
+								<li>Apoyo y supervisión corporativa.</li>
+								<li>Calidad constante.</li>
+								<li>Ofrecemos un servicio de mesas rápido y eficiente.</li>
+								<li>Sistema computarizado de apoyo.</li>
+							</ul>
 						</div>
-						
+						<div id="botonDescarga" class="col-md-8">
+							<div id="descargar">
+								<img src="../img/boton_dossier.png" alt="boton descarga"/>
+							</div>
+							<div id="modal" class="remover">
+								<div id="paraDescargar" class="col-md-2">
+									<span class="glyphicon glyphicon-remove-circle" style="color:red;"></span>
+									<h3 class="tituloS">Descargar Archivo</h3>
+									<form id="myForm">
+										<input type="password" placeholder="Contrase&ntilde;a" id="myTextBox" />
+										<input type="button" value="Descargar" id="download" onclick="descargar(); resett();" />
+									</form>
+									<div id="descargar_pdf" class="remover" onclick="esconder();resett();">
+										<a href="Franquicias_La_Sierra.pdf" download="Franquicias_La_Sierra.pdf">
+											<img src="../img/download.png" alt="boton descargar" />Descargar Dossier
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div id="imgNos" class="col-md-4">
@@ -100,11 +115,52 @@
     	
     	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+<<<<<<< HEAD
 		<script src='f16a0decf39ff989e4c508dc4adfb3ff.js'></script>
+=======
+        <script type="text/javascript">
+        	var blanco="";
+        	
+        	var descargarbtn= document.getElementById('descargar_pdf');
+	        function descargar(){
+				var autentificar = 'PizzeriaLaSierra90210';
+				var myValue = document.getElementById('myTextBox').value;
+
+				if (myValue.length == 0) {
+					alert('Por favor no dejes en blanco el espacio.');
+					return;
+				}
+				if(autentificar==myValue){
+					descargarbtn.classList.remove("remover");
+				}else{
+					alert('Introduce la contraseña correcta.');
+					
+				}
+			}
+			function esconder(){
+				descargarbtn.classList.add('remover');
+				
+			}
+			function resett(){
+				document.getElementById("myForm").reset();
+			}
+        </script>
+		<script src='js/vendor/bootstrap.min.js'></script>
+<script src='js/main.js'></script>
+<script src='js/fs.wallpaper.js'></script>
+>>>>>>> FETCH_HEAD
 		<script type="text/javascript">
 		    $(document).ready(function(){
 		    	$("#franHeader").wallpaper({
 				    source: "img/franHeader.jpg"
+				});
+				$('#descargar').click(function(){
+					$('#modal').removeClass('remover');
+					//alert('hola');
+				});
+				$('.glyphicon-remove-circle').click(function(){
+					$('#modal').addClass('remover');
+					
 				});
 		    });
 		</script>
