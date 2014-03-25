@@ -663,6 +663,13 @@ blockquote {
   background-image: url(../img/prodBG.jpg);
   background-position: center top;
 }
+#audioMananitas {
+  margin: 15% 30%;
+  padding-bottom: 50%;
+}
+#audioMananitas audio {
+  width: 100%;
+}
 /* Small devices (480px and down) class="info_suc" */
 /* Small devices (480px and down) */
 /* Small devices (tablets, 768px and up) */
