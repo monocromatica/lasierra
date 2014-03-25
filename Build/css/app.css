@@ -428,7 +428,8 @@ blockquote {
               nosotros
 ---------------------------------------*/
 #nosBG {
-  background: url(../img/contacto_bg.jpg) no-repeat center top;
+  background: url(../img/bgnegro.jpg) no-repeat left top;
+  background-size: cover;
 }
 #nosHeader {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
