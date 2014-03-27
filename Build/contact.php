@@ -1,9 +1,9 @@
 <?php
 /* Set e-mail recipient */
 $myemail  = "hectorob91@gmail.com";
-$subject = "Nueva orden, confirma la orden por telefono por favor"
+$subject = "Nueva orden, confirma la orden por telefono por favor";
 /* Check all form inputs using check_input function */
-$yourname = check_input($_POST['nombre'], "Ingresa tu nombre");
+$nombre = check_input($_POST['nombre'], "Ingresa tu nombre");
 $direccion  = check_input($_POST['direccion'], "direccion completa");
 $email    = check_input($_POST['email']);
 $telefono  = check_input($_POST['telefono']);
@@ -26,7 +26,7 @@ if (!preg_match("/^(https?:\/\/+[\w\-]+\.[\w\-]+)/i", $telefono))
 /* Let's prepare the message for the e-mail */
 $message = "LA ORDEN ES LA SIGUIENTE:
 
-Name: $yourname
+Nombre: $nombre
 Direccion: $direccion
 E-mail: $email
 Telefono: $telefono
