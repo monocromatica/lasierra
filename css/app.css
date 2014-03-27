@@ -164,7 +164,6 @@ a.link_blanco:hover {
 #text-Ens {
   width: 400px;
   margin-top: -600px;
-  margin-bottom: 300px;
   z-index: 999;
   position: relative;
   float: right;
@@ -189,7 +188,8 @@ a.link_blanco:hover {
   color: white;
 }
 #contIndex #notipizza {
-  margin-top: 30px;
+  margin-top: -20px;
+  margin-bottom: 30px !important;
 }
 #contIndex ul li a {
   color: white;
