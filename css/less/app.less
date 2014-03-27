@@ -734,14 +734,44 @@ blockquote {
 	background: url('img/ingBG.jpg') repeat center top;
 }
 
-#listaPizzas{
-	li{
-		padding: 5px;
-		border-bottom: 1px solid rgba(0,0,0,0.53);
-		&:hover{
-			background-color: rgba(0,164,201,0.53);
-		}
-	}
+#general{
+	background-color: rgba(255,255,255,.8);
+	padding: 30px;
+	margin: 15%;
+	.rounded(20px);
+}
+
+.contenido{
+	color: #000000;
+	padding: 20px;
+}
+.tamanoCaja{
+	width: 80%;
+	height: 30px;
+	.rounded(5px);
+	box-shadow:1px 1px 9px rgba(0,0,0,0.35);
+}
+.padding{
+	padding: 2%;
+}
+
+#comp{
+	padding-top: -100px;
+	margin-top: -100px;
+}
+
+#bebida{
+	.rounded(5px);
+	box-shadow:1px 1px 9px rgba(0,0,0,0.35);
+}
+#botones{
+	margin: 20%;
+	text-align: center;
+	padding-bottom: 100px;
+}
+
+.margin{
+	margin: 20px;
 }
 /* Small devices (480px and down) class="info_suc" */
 
@@ -775,51 +805,3 @@ blockquote {
 	
 }
 
-/*
-   /*var map;
-		  	var mislocales = new Array();
-			mislocales[0] = 20.730780, -103.346258;
-			mislocales[1] = -0.406491, -69.609375;
-			mislocales[2] = 0.701391, -65.489502;
-			mislocales[3] = 21.163282, -98.701172;
-			mislocales[4] = 31.266813, -97.382813;
-			mislocales[5] = 38.664067, -117.070313;
-			mislocales[6] = 40.157885, -95.800781;
-			mislocales[7] = 34.261757, 89.648438;
-			mislocales[8] = 53.298056, 46.054688;
-			mislocales[9] = 55.347889, 95.625000;
-			mislocales[10] = 67.464398, -39.199219;
-		
-	  	function initialize() {
-        	var mapOptions = {
-			center: new google.maps.LatLng(28.647114, -106.053898),//20.730780, -103.346258
-			zoom: 14
-			
-			};
-	        var map = new google.maps.Map(document.getElementById("map-canvas"),
-	            mapOptions);
-	       // var deliciasloC= new.google.maps.LatLng(20.730780, -103.346258);
-	        var Delicias= new google.maps.Marker({
-				position: (20.730780, -103.346258),
-			    map: map,
-			    title:"Hola Mundo"
-			});
-	            if(navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(function(position) {
-						var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-						var infowindow = new google.maps.InfoWindow({
-							map: map,
-							position: pos,
-							content: 'Esta es tu ubicación actual.'
-						});
-	
-						map.setCenter(pos);
-						}, function() {
-							handleNoGeolocation(true);
-							});
-				} else {
-	    // Browser doesn't support Geolocation
-	    			handleNoGeolocation(false);
-						}	            
-		}
-      google.maps.event.addDomListener(window, 'load', initialize);	*/

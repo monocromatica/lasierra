@@ -1,5 +1,6 @@
 <?php
 /* Set e-mail recipient */
+$div_id = "botones";
 $myemail  = "hectorob91@gmail.com";
 $subject = "Nueva orden, confirma la orden por telefono por favor";
 /* Check all form inputs using check_input function */
@@ -18,10 +19,6 @@ if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
 }
 
 /* If URL is not valid set $website to empty */
-if (!preg_match("/^(https?:\/\/+[\w\-]+\.[\w\-]+)/i", $telefono))
-{
-    $telefono = '';
-}
 
 /* Let's prepare the message for the e-mail */
 $message = "LA ORDEN ES LA SIGUIENTE:
