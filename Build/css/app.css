@@ -670,6 +670,19 @@ blockquote {
 #audioMananitas audio {
   width: 85%;
 }
+/*------------------------------------------
+				   Pedidos
+------------------------------------------*/
+#pedidosBG {
+  background: url(../img/ingBG.jpg) repeat center top;
+}
+#listaPizzas li {
+  padding: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.53);
+}
+#listaPizzas li:hover {
+  background-color: rgba(0, 164, 201, 0.53);
+}
 /* Small devices (480px and down) class="info_suc" */
 /* Small devices (480px and down) */
 /* Small devices (tablets, 768px and up) */
